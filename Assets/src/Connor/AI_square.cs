@@ -5,10 +5,13 @@ using UnityEngine.AI;
 
 public class AI_square : MonoBehaviour
 {
+    //public player and speed
     public GameObject player;
     public float speed;
 
+    //private distance float
     private float distance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,23 @@ public class AI_square : MonoBehaviour
         //move
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+
+        //pick new cover if made it
+        if (this.transform.position == player.transform.position)
+        {
+            reCover();
+        }
+
+    }
+
+    private void reCover()
+    {
+        //temp array for all cover objects
+        GameObject[] all = GameObject.FindGameObjectsWithTag("cover");
+        int length = all.Length;
+
+        //assign new random cover
+        player = all[(int)Random.Range(0, length)];
 
     }
 }
