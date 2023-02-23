@@ -5,7 +5,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rbody;
-    public float pSpeed = 2000f;
+    private float xInput = 0f;
+    private float yInput = 0f;
+    public float pSpeed = 5f;
 
     void Awake()
     {
@@ -21,19 +23,24 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbody.velocity = Vector2.zero;
+        rbody.velocity = Vector2.zero; // set current velocity to 0
+        xInput = Input.GetAxisRaw("Horizontal"); // get horizontal(x) input
+        yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
 
-        if (Input.GetKey(KeyCode.S)) {
-            rbody.velocity = new Vector2(0, -pSpeed * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.D)) {
-            rbody.velocity = new Vector2(pSpeed * Time.deltaTime, 0);
-        }
-        if (Input.GetKey(KeyCode.A)) {
-            rbody.velocity = new Vector2(-pSpeed * Time.deltaTime, 0);
-        }
-        if (Input.GetKey(KeyCode.W)) {
-            rbody.velocity = new Vector2(0, pSpeed * Time.deltaTime);
-        }
+        Vector3 dVector = new Vector3(xInput, yInput, 0); // set new direction parameters
+        rbody.velocity = dVector.normalized * pSpeed; // apply new direction and velocity
+
+        // if (Input.GetKey(KeyCode.S)) {
+        //     rbody.velocity = new Vector2(0, -pSpeed * Time.deltaTime);
+        // }
+        // if (Input.GetKey(KeyCode.D)) {
+        //     rbody.velocity = new Vector2(pSpeed * Time.deltaTime, 0);
+        // }
+        // if (Input.GetKey(KeyCode.A)) {
+        //     rbody.velocity = new Vector2(-pSpeed * Time.deltaTime, 0);
+        // }
+        // if (Input.GetKey(KeyCode.W)) {
+        //     rbody.velocity = new Vector2(0, pSpeed * Time.deltaTime);
+        // }
     }
 }
