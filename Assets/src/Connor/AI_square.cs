@@ -12,10 +12,12 @@ public class AI_square : MonoBehaviour
     //private distance float
     private float distance;
 
+    public GameObject ball;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(spawnBall());
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class AI_square : MonoBehaviour
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 
-        //function I found to get the AI to face the player
+        //function I found to get the AI to face the cover its moving to
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         //move
@@ -50,5 +52,15 @@ public class AI_square : MonoBehaviour
         //assign new random cover
         player = all[(int)Random.Range(0, length)];
 
+    }
+
+    //spawn new barrel
+    IEnumerator spawnBall()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(4);
+            Instantiate(ball, this.transform.position, Quaternion.identity);
+        }
     }
 }
