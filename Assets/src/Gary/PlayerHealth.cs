@@ -7,19 +7,20 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rBody;
     private float maxHealth = 100;
     public HealthBar healthbar;
+    public AudioManager audioManager;
     //private bool regenerating = false;
     
 
     [SerializeField]
     public float currentHealth;
 
-    [SerializeField]
-    int regenRate = 5;
+    
+    float regenRate = 1f;
     
     void Awake(){
         rBody = GetComponent<Rigidbody2D>();
         SetHealth(maxHealth);
-        InvokeRepeating("RegenerateHealth", 1 , 1); //(methodname,time,repeatrate)
+        InvokeRepeating("RegenerateHealth", .1f , .1f); //(methodname,time,repeatrate)
     }
 
     public void SetHealth(float health){
@@ -58,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = maxHealth;
             }    
             healthbar.setHealth(currentHealth);
+            audioManager.SetLowPass(currentHealth);
         
         }
         else
