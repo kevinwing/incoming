@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private Transform playerTransform;
+    private Vector3 mousePostion;
+    private Vector3 ObjPosition;
+    private float angle;
     private Rigidbody2D rbody;
     private float xInput = 0f;
     private float yInput = 0f;
@@ -12,6 +16,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         rbody = GetComponent<Rigidbody2D>();
+        playerTransform = this.transform;
     }
 
     // Start is called before the first frame update
@@ -23,24 +28,43 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rbody.velocity = Vector2.zero; // set current velocity to 0
-        xInput = Input.GetAxisRaw("Horizontal"); // get horizontal(x) input
-        yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
+        PlayerAim();
+        PlayerMove();
+    }
 
-        Vector3 dVector = new Vector3(xInput, yInput, 0); // set new direction parameters
+    /// <summary>
+    /// Method to handle the player movement
+    /// </summary>
+    private void PlayerMove()
+    {
+        // rbody.velocity = Vector2.zero; // set current velocity to 0
+        xInput = Input.GetAxis("Horizontal"); // get horizontal(x) input
+        yInput = Input.GetAxis("Vertical"); // get vertical(y) input
+
+        Vector2 dVector = new Vector2(xInput, yInput); // set new direction parameters
         rbody.velocity = dVector.normalized * pSpeed; // apply new direction and velocity
+    }
 
-        // if (Input.GetKey(KeyCode.S)) {
-        //     rbody.velocity = new Vector2(0, -pSpeed * Time.deltaTime);
-        // }
-        // if (Input.GetKey(KeyCode.D)) {
-        //     rbody.velocity = new Vector2(pSpeed * Time.deltaTime, 0);
-        // }
-        // if (Input.GetKey(KeyCode.A)) {
-        //     rbody.velocity = new Vector2(-pSpeed * Time.deltaTime, 0);
-        // }
-        // if (Input.GetKey(KeyCode.W)) {
-        //     rbody.velocity = new Vector2(0, pSpeed * Time.deltaTime);
-        // }
+    /// <summary>
+    /// Method to handle the direction the player is aiming
+    /// </summary>
+    private void PlayerAim()
+    {
+        mousePostion = Input.mousePosition;
+        mousePostion.z = 5.23f;
+
+        ObjPosition = Camera.main.WorldToScreenPoint(playerTransform.position);
+
+        mousePostion.x = mousePostion.x - ObjPosition.x;
+        mousePostion.y = mousePostion.y - ObjPosition.y;
+
+        angle = Mathf.Atan2(mousePostion.y, mousePostion.x) * Mathf.Rad2Deg;
+
+        transform.rotation = Quaternion.Euler(new Vector3(0,0, angle));
+    }
+
+    private void PlayerShoot()
+    {
+        //
     }
 }
