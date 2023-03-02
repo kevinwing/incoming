@@ -55,7 +55,7 @@ public class AI_square : MonoBehaviour
     //trigger recover
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        reCover();
+        Invoke("reCover", 2.0f);
     }
 
     //set nav mesh destination
@@ -67,25 +67,14 @@ public class AI_square : MonoBehaviour
     //find new cover
     private void reCover()
     {
-        //if topped out, reset to 0, else randomly pick forward or back
-        if (index == all.Length - 1)
+        //pick new cover not equal to current one
+        int temp = (int)Random.Range(0, all.Length);
+        while (temp == index)
         {
-            index = (int)Random.Range(0, all.Length - 1);
+            temp = (int)Random.Range(0, all.Length);
         }
-        else
-        {
-            if ((Random.value > 0.5f))
-            {
-                index++;
-            }
-            else
-            {
-                if (index == 0)
-                    index = all.Length - 1;
-                else
-                    index--;
-            }
-        }
+
+        index = temp;
 
         //assign new cover
         coverPoint = all[index];

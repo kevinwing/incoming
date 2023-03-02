@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 741263977278215264}
   - component: {fileID: 741263977278215265}
   - component: {fileID: 741263977278215267}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: cvrpoint
   m_TagString: cover
   m_Icon: {fileID: 0}
