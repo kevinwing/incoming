@@ -10,6 +10,9 @@ public class AI_square : MonoBehaviour
     private GameObject[] all = {};
     private int index;
 
+    [SerializeField]
+    public float health = 100;
+
     //collider
     public Collider2D coll;
 
@@ -80,6 +83,12 @@ public class AI_square : MonoBehaviour
         coverPoint = all[index];
     }
 
+    //get health
+    public float GetHealth()
+    {
+        return health;
+    }
+
     //spawn new ball
     IEnumerator spawnBall()
     {
@@ -87,6 +96,32 @@ public class AI_square : MonoBehaviour
         {
             yield return new WaitForSeconds(4);
             Instantiate(ball, this.transform.position, Quaternion.identity);
+        }
+    }
+
+    //set health
+    public void setHealth(float AIHealth)
+    {
+        health = AIHealth;
+    }
+
+    //damage
+    public void DoDamage(float damage)
+    {
+        if(health - damage >= 0)
+        {
+            if (health - damage > 100)
+            {
+                setHealth(100);
+            }
+            else
+            {
+                setHealth(health - damage);
+            }
+        }
+        else
+        {
+            setHealth(0);
         }
     }
 }
