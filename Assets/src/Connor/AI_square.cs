@@ -8,8 +8,9 @@ public class AI_square : MonoBehaviour
     //public cover object array and tracker
     public GameObject coverPoint;
     private GameObject[] all = {};
-    private int index;
+    private int index = 0;
 
+    //health
     [SerializeField]
     public float health = 100;
 
@@ -35,7 +36,7 @@ public class AI_square : MonoBehaviour
 
         //establish first random cover object
         all = GameObject.FindGameObjectsWithTag("cover");
-        index = (int)Random.Range(0, all.Length - 1);
+        reIndex();
         coverPoint = all[index];
 
         //StartCoroutine(spawnBall());
@@ -55,6 +56,16 @@ public class AI_square : MonoBehaviour
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
     }
 
+    public void reIndex()
+    {
+        index = (int)Random.Range(0, all.Length - 1);
+    }
+
+    public int getIndex()
+    {
+        return index;
+    }
+
     //trigger recover
     private void OnTriggerEnter2D(Collider2D coll)
     {
@@ -68,7 +79,7 @@ public class AI_square : MonoBehaviour
     }
 
     //find new cover
-    private void reCover()
+    public void reCover()
     {
         //pick new cover not equal to current one
         int temp = (int)Random.Range(0, all.Length);
