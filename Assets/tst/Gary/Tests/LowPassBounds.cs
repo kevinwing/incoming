@@ -26,6 +26,25 @@ public class LowPassBounds
         //Assert
         Assert.AreEqual(expected, frequency);
     }
+    // A Test behaves as an ordinary method
+    [Test]
+    public void FreqCheckUpperBounds()
+    {
+        //Arrange
+        var expected = 22000;
+        var gObject = new GameObject();
+        var P1 = gObject.AddComponent<AudioManager>();
+
+        
+
+        //Act
+        float frequency = P1.SetLowPass(30000);
+
+
+
+        //Assert
+        Assert.AreEqual(expected, frequency);
+    }
 /*
         // A Test behaves as an ordinary method
    [Test]

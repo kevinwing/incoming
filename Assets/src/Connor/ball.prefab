@@ -139,4 +139,4 @@ MonoBehaviour:
   speed: 10
   body: {fileID: 3284034116535098507}
   coll: {fileID: 3284034116535098504}
-  player: {fileID: 0}
+  player: {fileID: 1886408715689802966, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}

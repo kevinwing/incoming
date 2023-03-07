@@ -14,6 +14,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-6206631401212641392
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Test
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 7849b5da3e75c449fb04bfc99f00e0b2
+  m_Children: []
+  m_Volume: de851655958b242e79ee02af49e706d9
+  m_Pitch: 50f37f689030f4910a625af0e04ec6d8
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -1935176366209285955}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!243 &-5838177260408172969
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -33,6 +52,20 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-1935176366209285955
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 8aff624f549a146d18e12da34967b8c0
+  m_EffectName: Attenuation
+  m_MixLevel: a11b890656e8b4b79ad31df0bfd45d8e
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-160359719754070070
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -72,6 +105,7 @@ AudioMixerController:
     - 69d760db2cbc44946a1bd6f90bb94593
     - e5527ebd46a12457b97619d29326fada
     - 01dfd7f851ec54e6eb83d786fccdbf7a
+    - 7849b5da3e75c449fb04bfc99f00e0b2
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -86,6 +120,7 @@ AudioMixerGroupController:
   m_GroupID: 69d760db2cbc44946a1bd6f90bb94593
   m_Children:
   - {fileID: 4262619369749519315}
+  - {fileID: -6206631401212641392}
   m_Volume: 5c42ac87b2b8f42ea958c454d83070a0
   m_Pitch: 753fe5ad241ed48a5afe31ffe6a93191
   m_Send: 00000000000000000000000000000000
@@ -120,6 +155,7 @@ AudioMixerSnapshotController:
   m_SnapshotID: 3566dfce8a5734a5aac1031a12955e8e
   m_FloatValues:
     ac480f426b9a44cc1ad65f4516f15134: 22000
+    de851655958b242e79ee02af49e706d9: -37.041656
     5c42ac87b2b8f42ea958c454d83070a0: -4.2869415
   m_TransitionOverrides: {}
 --- !u!244 &1821275301714664479

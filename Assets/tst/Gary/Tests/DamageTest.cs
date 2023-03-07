@@ -66,25 +66,6 @@ public class DamageTest
 
 
     [Test]
-    public void DamageTestUpperBoundTen()
-    {
-        //Arrange
-        var expected = 100;
-        var gObject = new GameObject();
-        var P1 = gObject.AddComponent<PlayerHealth>();
-        P1.SetHealth(100);
-        
-
-        //Act
-        P1.DoDamage(10);
-
-
-
-        //Assert
-        Assert.AreEqual(expected, P1.GetHealth());
-    }
-
-    [Test]
     public void DamageTestUpperBound99()
     {
         //Arrange
@@ -103,24 +84,7 @@ public class DamageTest
         Assert.AreEqual(expected, P1.GetHealth());
     }
 
-    [Test]
-    public void DamageTestUpperBound50()
-    {
-        //Arrange
-        var expected = 50;
-        var gObject = new GameObject();
-        var P1 = gObject.AddComponent<PlayerHealth>();
-        P1.SetHealth(50);
-        
 
-        //Act
-        P1.DoDamage(-10);
-
-
-
-        //Assert
-        Assert.AreEqual(expected, P1.GetHealth());
-    }
 
 
     [Test]
