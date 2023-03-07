@@ -72,7 +72,6 @@ AudioMixerController:
     - 69d760db2cbc44946a1bd6f90bb94593
     - e5527ebd46a12457b97619d29326fada
     - 01dfd7f851ec54e6eb83d786fccdbf7a
-    - 59a11048136324596a4d16def24bcfc1
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -87,7 +86,6 @@ AudioMixerGroupController:
   m_GroupID: 69d760db2cbc44946a1bd6f90bb94593
   m_Children:
   - {fileID: 4262619369749519315}
-  - {fileID: 1126569479801068183}
   m_Volume: 5c42ac87b2b8f42ea958c454d83070a0
   m_Pitch: 753fe5ad241ed48a5afe31ffe6a93191
   m_Send: 00000000000000000000000000000000
@@ -121,55 +119,9 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 3566dfce8a5734a5aac1031a12955e8e
   m_FloatValues:
-    fe65bae044f5a41f1997acf135fbb583: -7.8940816
-    27060321bfdf6451889691fade442d11: 0
     ac480f426b9a44cc1ad65f4516f15134: 22000
-    c489050744f9546d99862073fd71df9f: 10
-    baf4fe07f10c2455b8230e49ccffa20f: 21
     5c42ac87b2b8f42ea958c454d83070a0: -4.2869415
   m_TransitionOverrides: {}
---- !u!244 &639383786689106903
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: f4b38cb261e334027b72a26e66205cf1
-  m_EffectName: Compressor
-  m_MixLevel: 18888edb39a374df49d5bf2392bce69e
-  m_Parameters:
-  - m_ParameterName: Threshold
-    m_GUID: 27060321bfdf6451889691fade442d11
-  - m_ParameterName: Attack
-    m_GUID: c489050744f9546d99862073fd71df9f
-  - m_ParameterName: Release
-    m_GUID: baf4fe07f10c2455b8230e49ccffa20f
-  - m_ParameterName: Make up gain
-    m_GUID: e97f5421618af4a0b8c59d95ba2d0a80
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
---- !u!243 &1126569479801068183
-AudioMixerGroupController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Test
-  m_AudioMixer: {fileID: 24100000}
-  m_GroupID: 59a11048136324596a4d16def24bcfc1
-  m_Children: []
-  m_Volume: fe65bae044f5a41f1997acf135fbb583
-  m_Pitch: a87795ca40a7040ba8a1599826532fa7
-  m_Send: 00000000000000000000000000000000
-  m_Effects:
-  - {fileID: 2928746516088275673}
-  - {fileID: 639383786689106903}
-  m_UserColorIndex: 0
-  m_Mute: 0
-  m_Solo: 0
-  m_BypassEffects: 0
 --- !u!244 &1821275301714664479
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -185,20 +137,6 @@ AudioMixerEffectController:
     m_GUID: ac480f426b9a44cc1ad65f4516f15134
   - m_ParameterName: Resonance
     m_GUID: 91cbac1290d1146bc8bd4bcf90abe3d0
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
---- !u!244 &2928746516088275673
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 9a81997e35eee4308a94331ab94137e5
-  m_EffectName: Attenuation
-  m_MixLevel: d1e061299a5654b1fbe18aeb361f2865
-  m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
