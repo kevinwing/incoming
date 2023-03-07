@@ -7,7 +7,6 @@ TagManager:
   - cover
   - ball
   - enemy
-  - test
   layers:
   - Default
   - TransparentFX
