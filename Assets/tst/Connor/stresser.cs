@@ -11,6 +11,7 @@ public class stresser : MonoBehaviour
     //testing variables
     private float FPS = 300;
     private int num = 0;
+    private bool testing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,10 @@ public class stresser : MonoBehaviour
         if (Time.timeScale != 0)
             Debug.Log(FPS);
 
+        if (FPS < 60 && testing){
+            Time.timeScale = 0;
+        }
+
     }
 
     //spawn new AI
@@ -40,6 +45,10 @@ public class stresser : MonoBehaviour
             Instantiate(AI, new Vector3(0f, 0f, 0f), Quaternion.identity);
             num++;
         }
+    }
+
+    void register(){
+        testing = true;
     }
 
     //show number of spawned AIs in top left
