@@ -37,12 +37,19 @@ public class Player : MonoBehaviour
     /// </summary>
     private void PlayerMove()
     {
-        // rbody.velocity = Vector2.zero; // set current velocity to 0
-        xInput = Input.GetAxis("Horizontal"); // get horizontal(x) input
-        yInput = Input.GetAxis("Vertical"); // get vertical(y) input
+        xInput = Input.GetAxisRaw("Horizontal"); // get horizontal(x) input
+        yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
 
         Vector2 dVector = new Vector2(xInput, yInput); // set new direction parameters
         rbody.velocity = dVector.normalized * pSpeed; // apply new direction and velocity
+    }
+
+    public Vector2 CalculateMovement(float h, float v, float deltaTime)
+    {
+        var x = h * pSpeed * deltaTime;
+        var y = v * pSpeed * deltaTime;
+
+        return new Vector2(x, y);
     }
 
     /// <summary>
