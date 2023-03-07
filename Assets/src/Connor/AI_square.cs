@@ -39,7 +39,7 @@ public class AI_square : MonoBehaviour
         reIndex();
         coverPoint = all[index];
 
-        //StartCoroutine(spawnBall());
+        StartCoroutine(spawnBall());
     }
 
     // Update is called once per frame
@@ -75,7 +75,7 @@ public class AI_square : MonoBehaviour
     //set nav mesh destination
     private void setPos()
     {
-        agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
+        //agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
     }
 
     //find new cover

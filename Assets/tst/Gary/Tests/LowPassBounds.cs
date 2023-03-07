@@ -16,12 +16,23 @@ public class LowPassBounds
         var gObject = new GameObject();
         var P1 = gObject.AddComponent<AudioManager>();
 
-        
+        //Act
+        float frequency = P1.SetLowPass(5);  // Setting lowpass below lower bound of 120hz
+
+        //Assert
+        Assert.AreEqual(expected, frequency);
+    }
+    // A Test behaves as an ordinary method
+    [Test]
+    public void FreqCheckUpperBounds()
+    {
+        //Arrange
+        var expected = 22000;
+        var gObject = new GameObject();
+        var P1 = gObject.AddComponent<AudioManager>();
 
         //Act
-        float frequency = P1.SetLowPass(5);
-
-
+        float frequency = P1.SetLowPass(30000); //  Setting lowpass above upper bound of 22000hz
 
         //Assert
         Assert.AreEqual(expected, frequency);
