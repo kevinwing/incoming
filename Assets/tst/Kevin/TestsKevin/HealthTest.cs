@@ -39,6 +39,6 @@ public class HealthTest
 
         player.TakeDamage(100);
 
-        Assert.AreEqual(false, player.isDead());
+        Assert.AreEqual(true, player.isDead());
     }
 }
