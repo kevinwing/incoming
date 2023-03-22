@@ -1,21 +1,9 @@
 {
     "name": "TestsKevin",
-    "rootNamespace": "",
-    "references": [
-        "UnityEditor.TestRunner",
-        "UnityEngine.TestRunner"
+    "optionalUnityReferences": [
+        "TestAssemblies"
     ],
-    "includePlatforms": [],
-    "excludePlatforms": [],
-    "allowUnsafeCode": false,
-    "overrideReferences": true,
-    "precompiledReferences": [
-        "nunit.framework.dll"
-    ],
-    "autoReferenced": false,
-    "defineConstraints": [
-        "UNITY_INCLUDE_TESTS"
-    ],
-    "versionDefines": [],
-    "noEngineReferences": false
+    "includePlatforms": [
+        "Editor"
+    ]
 }

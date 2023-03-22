@@ -11,7 +11,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rbody;
     private float xInput = 0f;
     private float yInput = 0f;
-    public float pSpeed = 5f;
+    private float pSpeed = 5f;
+    private int pHealth = 100;
+    private bool is_dead = false;
 
     void Awake()
     {
@@ -73,5 +75,39 @@ public class Player : MonoBehaviour
     private void PlayerShoot()
     {
         //
+    }
+
+    public void TakeDamage(int dmgAmt)
+    {
+        this.pHealth -= dmgAmt;
+        if (this.pHealth <= 0)
+        {
+            this.is_dead = true;
+        }
+    }
+
+    public void setSpeed(float newSpeed)
+    {
+        this.pSpeed = newSpeed;
+    }
+
+    public float getSpeed()
+    {
+        return this.pSpeed;
+    }
+
+    public void setHealth(int newHealth)
+    {
+        this.pHealth = newHealth;
+    }
+
+    public int getHealth()
+    {
+        return this.pHealth;
+    }
+
+    public bool isDead()
+    {
+        return this.is_dead;
     }
 }
