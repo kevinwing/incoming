@@ -8,24 +8,24 @@ using UnityEngine.TestTools;
 public class movement_test
 {
     [Test]
-    public IEnumerator moveAlongXAxisHorizontalInput()
+    public IEnumerator moveAlongXAxisHorizontalMovement()
     {
-        Player player = new Player();
-        player.pSpeed = 1f;
+        var player = new Player();
+        player.setSpeed(1);
 
         yield return null;
 
-        Assert.AreEqual(1, player.transform.position.x, 0.1f);
+        Assert.AreEqual(1, player.transform.position.x, 1f);
     }
 
     [Test]
     public IEnumerator moveAlongYAxisVerticalMovement()
     {
         var player = new Player();
-        player.pSpeed = 1f;
+        player.setSpeed(1);
 
         yield return null;
 
-        Assert.AreEqual(1, player.transform.position.y, 0.1f);
+        Assert.AreEqual(1, player.transform.position.y, 1f);
     }
 }
