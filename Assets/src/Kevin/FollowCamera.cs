@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    public Transform followTransform;
+    public Transform playerTransform; // reference for the Player transform
 
-    // Update is called once per frame
+    // Called when physics events occur
     void FixedUpdate()
     {
-        this.transform.position = new Vector3(followTransform.position.x, followTransform.position.y, this.transform.position.z);
+        // change position of the camera relative to the position of the Player
+        this.transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, this.transform.position.z);
     }
 }

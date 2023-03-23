@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-// using TMPro;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -14,6 +13,10 @@ public class SpawnManager : MonoBehaviour
     private int waveSize = 1; // intiial wave size
      private float entityYBounds = -6f; // y position where entities will be destroyed
     private float entityXBounds = 8f;
+
+    // void awake()
+    // {
+    // }
 
     // public TMP numEntitiesText;
     // Start is called before the first frame update
@@ -48,5 +51,10 @@ public class SpawnManager : MonoBehaviour
 
             waveSize *= 2;
         }
+    }
+
+    void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 100, 100), "Entities: " + waveSize.ToString());
     }
 }
