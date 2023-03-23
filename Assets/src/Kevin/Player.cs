@@ -74,7 +74,17 @@ public class Player : MonoBehaviour
 
     private void PlayerShoot()
     {
-        //
+        // TODO: implement shooting the ball
+    }
+
+    private void PlayerDodge()
+    {
+        // TODO: implement dodging an incoming ball
+    }
+
+    private void PlayerPickUpBall()
+    {
+        // TODO: Implement picking up new ball
     }
 
     public void TakeDamage(int dmgAmt)
