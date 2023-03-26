@@ -17,22 +17,22 @@ public class stresser : MonoBehaviour
     void Start()
     {
         //start spawning
-        StartCoroutine(spawnAI());
-        Invoke("register", 2.0f);
+        // StartCoroutine(spawnAI());
+        // Invoke("register", 2.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         //check fps
-        FPS = (1.0f / Time.deltaTime);
+        // FPS = (1.0f / Time.deltaTime);
 
-        if (Time.timeScale != 0)
-            Debug.Log(FPS);
+        // if (Time.timeScale != 0)
+        //     Debug.Log(FPS);
 
-        if (FPS < 60 && testing){
-            Time.timeScale = 0;
-        }
+        // if (FPS < 60 && testing){
+        //     Time.timeScale = 0;
+        // }
 
     }
 
