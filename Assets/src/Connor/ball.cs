@@ -39,4 +39,13 @@ public class ball : MonoBehaviour
         //total velocity
         body.velocity = direction * speed;
     }
+
+    //function to nullify balls on hit with player
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            gameObject.tag = "ball_ground";
+        }
+    }
 }

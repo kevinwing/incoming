@@ -17,8 +17,9 @@ public class AI_square : MonoBehaviour
     //collider
     public Collider2D coll;
 
-    //dodgeball ref
+    //dodgeball ref and has bool
     public GameObject ball;
+    public bool hasBall;
 
     //nav mesh ref
     NavMeshAgent agent;
@@ -34,19 +35,32 @@ public class AI_square : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        //grab ball
+        hasBall = true;
+
         //establish first random cover object
         all = GameObject.FindGameObjectsWithTag("cover");
         reIndex();
         coverPoint = all[index];
 
+        //start throwing
         StartCoroutine(spawnBall());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //determine the target cover point location
-        target = coverPoint.transform.position;
+        //determine the target cover point location, correcting if it somehow becomes null
+        if (coverPoint == null)
+        {
+            reIndex();
+            coverPoint = all[index];
+            target = coverPoint.transform.position;
+        }
+        else
+        {
+            target = coverPoint.transform.position;
+        }
 
         //set target
         setPos();
@@ -56,11 +70,13 @@ public class AI_square : MonoBehaviour
         transform.rotation = Quaternion.Euler(Vector3.forward * angle);
     }
 
+    //find new index
     public void reIndex()
     {
         index = (int)Random.Range(0, all.Length - 1);
     }
 
+    //get index
     public int getIndex()
     {
         return index;
@@ -81,17 +97,27 @@ public class AI_square : MonoBehaviour
     //find new cover
     public void reCover()
     {
-        //pick new cover not equal to current one
-        int temp = (int)Random.Range(0, all.Length);
-        while (temp == index)
+        //if has ball, get new cover, else, get new ball
+        if (hasBall)
         {
-            temp = (int)Random.Range(0, all.Length);
+            //pick new cover not equal to current one
+            int temp = (int)Random.Range(0, all.Length);
+            while (temp == index)
+            {
+                temp = (int)Random.Range(0, all.Length);
+            }
+
+            //assign index
+            index = temp;
+
+            //assign new cover
+            coverPoint = all[index];
         }
-
-        index = temp;
-
-        //assign new cover
-        coverPoint = all[index];
+        else
+        {
+            //run down nearest ball
+            chaseBall();
+        }
     }
 
     //get health
@@ -100,13 +126,31 @@ public class AI_square : MonoBehaviour
         return health;
     }
 
-    //spawn new ball
+    //throw new ball
     IEnumerator spawnBall()
     {
         while (true)
         {
+            //wait
             yield return new WaitForSeconds(4);
-            Instantiate(ball, this.transform.position, Quaternion.identity);
+
+            //occasional recover/ball run to keep things spicy
+            if (hasBall)
+            {
+                reIndex();
+                coverPoint = all[index];
+            }
+            else
+            {
+                chaseBall();
+            }
+
+            //throw if has ball
+            if (hasBall)
+            {
+                Instantiate(ball, this.transform.position, Quaternion.identity);
+                hasBall = false;
+            }
         }
     }
 
@@ -134,5 +178,42 @@ public class AI_square : MonoBehaviour
         {
             setHealth(0);
         }
+    }
+
+    //2d collider handler
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.CompareTag("ball_ground"))
+        {
+            hasBall = true;
+            Destroy(collision.gameObject);
+            reCover();
+        }
+    }
+
+    //function for guiding the AI to a new ball to pick up
+    private void chaseBall()
+    {
+        //nullify coverPoint
+        coverPoint = null;
+
+        //get array of balls
+        GameObject[] balls = GameObject.FindGameObjectsWithTag("ball_ground");
+        GameObject closest = null;
+        float distance = 0.0f;
+
+        //find closest ball
+        for (int i = 0; i < balls.Length; i++)
+        {
+            if (Vector3.Distance(balls[i].transform.position, this.transform.position) > distance)
+            {
+                distance = Vector3.Distance(balls[i].transform.position, this.transform.position);
+                closest = balls[i];
+            }
+        }
+
+        //assign target
+        coverPoint = closest;
     }
 }
