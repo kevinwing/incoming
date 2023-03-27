@@ -104,6 +104,7 @@ MonoBehaviour:
   health: 1
   coll: {fileID: 0}
   ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
+  hasBall: 0
 --- !u!195 &6547798847543896587
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -134,7 +135,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6547798847543896583}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
