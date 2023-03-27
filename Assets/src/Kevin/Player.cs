@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private float pSpeed;
+
+    private Vector2 pMovement;
+
+    [SerializeField]
+    private Animator _animator;
+
     private Transform playerTransform;
     private Vector3 mousePostion;
     private Vector3 ObjPosition;
     private float angle;
     private Rigidbody2D rbody;
-    private float xInput = 0f;
-    private float yInput = 0f;
-    private float pSpeed = 5f;
+    // private float xInput = 0f;
+    // private float yInput = 0f;
     private int pHealth = 100;
     private bool is_dead = false;
 
@@ -19,6 +26,7 @@ public class Player : MonoBehaviour
     {
         rbody = GetComponent<Rigidbody2D>();
         playerTransform = this.transform;
+        this.pSpeed = 5f;
     }
 
     // Start is called before the first frame update
@@ -30,20 +38,37 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerAim();
-        PlayerMove();
+        // PlayerAim();
+        ProcessInputs();
+        this._animator.SetFloat("Horizontal", this.pMovement.x);
+        this._animator.SetFloat("Vertical", this.pMovement.y);
+
+        this._animator.SetFloat("Speed", this.pMovement.sqrMagnitude);
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
+    }
+
+    private void ProcessInputs()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        pMovement = new Vector2(moveX, moveY).normalized; // TODO: come back to this
     }
 
     /// <summary>
     /// Method to handle the player movement
     /// </summary>
-    private void PlayerMove()
+    private void Move()
     {
-        xInput = Input.GetAxisRaw("Horizontal"); // get horizontal(x) input
-        yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
+        // xInput = Input.GetAxisRaw("Horizontal"); // get horizontal(x) input
+        // yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
 
-        Vector2 dVector = new Vector2(xInput, yInput); // set new direction parameters
-        rbody.velocity = dVector.normalized * pSpeed; // apply new direction and velocity
+        // Vector2 dVector = new Vector2(xInput, yInput); // set new direction parameters
+        rbody.velocity = new Vector2(pMovement.x * pSpeed, pMovement.y * pSpeed); // apply new direction and velocity
     }
 
     public Vector2 CalculateMovement(float h, float v, float deltaTime)

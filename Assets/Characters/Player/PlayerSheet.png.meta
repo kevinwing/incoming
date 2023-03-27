@@ -474,10 +474,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_17
+      name: Idle_0
       rect:
         serializedVersion: 2
-        x: 864
+        x: 863
         y: 1727
         width: 48
         height: 68
@@ -495,7 +495,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_18
+      name: MoveRight_0
       rect:
         serializedVersion: 2
         x: 3
@@ -516,7 +516,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_19
+      name: MoveRight_1
       rect:
         serializedVersion: 2
         x: 50
@@ -537,7 +537,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_20
+      name: MoveRight_2
       rect:
         serializedVersion: 2
         x: 98
@@ -558,7 +558,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_21
+      name: MoveRight_3
       rect:
         serializedVersion: 2
         x: 146
@@ -579,7 +579,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_22
+      name: MoveRight_4
       rect:
         serializedVersion: 2
         x: 194
@@ -600,7 +600,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_23
+      name: MoveRight_5
       rect:
         serializedVersion: 2
         x: 241
@@ -621,7 +621,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_24
+      name: MoveUp_0
       rect:
         serializedVersion: 2
         x: 287
@@ -642,7 +642,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_25
+      name: MoveUp_1
       rect:
         serializedVersion: 2
         x: 335
@@ -663,7 +663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_26
+      name: MoveUp_2
       rect:
         serializedVersion: 2
         x: 383
@@ -684,10 +684,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_27
+      name: MoveUp_3
       rect:
         serializedVersion: 2
-        x: 434
+        x: 432
         y: 1631
         width: 46
         height: 69
@@ -705,10 +705,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_28
+      name: MoveUp_4
       rect:
         serializedVersion: 2
-        x: 479
+        x: 478
         y: 1631
         width: 50
         height: 71
@@ -726,7 +726,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_29
+      name: MoveUp_5
       rect:
         serializedVersion: 2
         x: 530
@@ -747,13 +747,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_30
+      name: MoveLeft_0
       rect:
         serializedVersion: 2
-        x: 575
-        y: 1535
-        width: 50
-        height: 165
+        x: 576
+        y: 1632
+        width: 46
+        height: 68
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -768,7 +768,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_31
+      name: MoveLeft_1
       rect:
         serializedVersion: 2
         x: 626
@@ -789,7 +789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_32
+      name: MoveLeft_2
       rect:
         serializedVersion: 2
         x: 675
@@ -810,7 +810,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_33
+      name: MoveLeft_3
       rect:
         serializedVersion: 2
         x: 722
@@ -831,7 +831,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_34
+      name: MoveLeft_4
       rect:
         serializedVersion: 2
         x: 770
@@ -852,7 +852,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_35
+      name: MoveLeft_5
       rect:
         serializedVersion: 2
         x: 818
@@ -873,10 +873,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_36
+      name: MoveDown_0
       rect:
         serializedVersion: 2
-        x: 866
+        x: 867
         y: 1634
         width: 47
         height: 68
@@ -894,7 +894,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_37
+      name: MoveDown_2
       rect:
         serializedVersion: 2
         x: 962
@@ -915,7 +915,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_38
+      name: MoveDown_4
       rect:
         serializedVersion: 2
         x: 1055
@@ -9924,7 +9924,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_467
+      name: Idle_1
       rect:
         serializedVersion: 2
         x: 912
@@ -9945,7 +9945,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_468
+      name: Idle_2
       rect:
         serializedVersion: 2
         x: 960
@@ -9966,7 +9966,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_469
+      name: Idle_3
       rect:
         serializedVersion: 2
         x: 1009
@@ -9987,7 +9987,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_470
+      name: Idle_4
       rect:
         serializedVersion: 2
         x: 1057
@@ -10008,7 +10008,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_471
+      name: Idle_5
       rect:
         serializedVersion: 2
         x: 1105
@@ -10029,7 +10029,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_472
+      name: MoveDown_5
       rect:
         serializedVersion: 2
         x: 1103
@@ -10932,7 +10932,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_515
+      name: MoveDown_1
       rect:
         serializedVersion: 2
         x: 914
@@ -10953,7 +10953,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PlayerSheet_516
+      name: MoveDown_3
       rect:
         serializedVersion: 2
         x: 1008
@@ -10982,7 +10982,7 @@ TextureImporter:
         width: 41
         height: 68
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -11023,7 +11023,6 @@ TextureImporter:
       PlayerSheet_322: 984889842
       PlayerSheet_449: 1803127059
       PlayerSheet_190: -1833877771
-      PlayerSheet_22: -773290611
       PlayerSheet_90: -1844888475
       PlayerSheet_134: -881177716
       PlayerSheet_442: 397306733
@@ -11035,6 +11034,7 @@ TextureImporter:
       PlayerSheet_459: 1272706695
       PlayerSheet_321: 2006034509
       PlayerSheet_278: -719419991
+      MoveRight_5: -606548622
       PlayerSheet_392: -2065558158
       PlayerSheet_447: 2057936982
       PlayerSheet_103: 403971213
@@ -11046,6 +11046,7 @@ TextureImporter:
       PlayerSheet_297: -1718572791
       PlayerSheet_144: -76212119
       PlayerSheet_175: -1176061627
+      MoveUp_4: 1588185591
       PlayerSheet_140: -518665960
       PlayerSheet_164: 1229543217
       PlayerSheet_402: 136415669
@@ -11055,6 +11056,7 @@ TextureImporter:
       PlayerSheet_464: -774240529
       PlayerSheet_75: 1246527927
       PlayerSheet_63: -1800893844
+      MoveLeft_3: -1360072341
       PlayerSheet_496: 1630794230
       PlayerSheet_309: 827570611
       PlayerSheet_218: 1034146684
@@ -11099,6 +11101,7 @@ TextureImporter:
       PlayerSheet_466: 1380647844
       PlayerSheet_260: -990756293
       PlayerSheet_153: 1556169942
+      MoveUp_5: -568842510
       PlayerSheet_82: 329545816
       PlayerSheet_258: -1612604944
       PlayerSheet_311: 359401394
@@ -11109,25 +11112,28 @@ TextureImporter:
       PlayerSheet_73: -793964254
       PlayerSheet_511: 193258788
       PlayerSheet_80: -870454908
-      PlayerSheet_21: -556557137
       PlayerSheet_499: 1878234010
       PlayerSheet_446: 119698413
       PlayerSheet_509: -1784600222
       PlayerSheet_385: -156676920
       PlayerSheet_204: 593527864
       PlayerSheet_78: 1515601483
+      MoveDown_4: 1684545686
+      MoveDown_3: -1094731824
       PlayerSheet_513: -821536678
-      PlayerSheet_37: 1369685814
+      MoveDown_2: 1369685814
       PlayerSheet_451: -899616012
       PlayerSheet_177: -866677035
       PlayerSheet_235: -1481270445
       PlayerSheet_4: 932342898
       PlayerSheet_387: -493234322
       PlayerSheet_259: 1732769777
+      Idle_1: 1912838218
       PlayerSheet_405: 1196305848
+      Idle_2: 627245232
+      MoveRight_0: 1754050879
       PlayerSheet_156: 1865600174
       PlayerSheet_398: 2011591943
-      PlayerSheet_515: -1299039318
       PlayerSheet_79: 2061449680
       PlayerSheet_147: 1085767921
       PlayerSheet_231: 1272135715
@@ -11138,7 +11144,6 @@ TextureImporter:
       PlayerSheet_376: 255306013
       PlayerSheet_455: 1708398131
       PlayerSheet_426: -2126038307
-      PlayerSheet_33: -1360072341
       PlayerSheet_430: 1702529331
       PlayerSheet_193: -728993072
       PlayerSheet_333: -1583789073
@@ -11156,23 +11161,22 @@ TextureImporter:
       PlayerSheet_354: -1063940364
       PlayerSheet_303: 1710168477
       PlayerSheet_138: -1889186440
+      MoveDown_0: -1747121610
       PlayerSheet_9: -398810680
       PlayerSheet_223: -985215334
       PlayerSheet_5: -975031990
-      PlayerSheet_18: 1754050879
-      PlayerSheet_38: 1684545686
       PlayerSheet_328: 1238830499
-      PlayerSheet_472: 1061586121
+      MoveUp_0: 2125618745
       PlayerSheet_150: 457266692
-      PlayerSheet_98: 966456723
-      PlayerSheet_221: -1895308353
       PlayerSheet_379: -1194030533
-      PlayerSheet_471: -1761347920
+      PlayerSheet_221: -1895308353
+      PlayerSheet_98: 966456723
       PlayerSheet_145: -481878363
       PlayerSheet_151: 929507598
       PlayerSheet_375: -1874039852
       PlayerSheet_66: -586778287
       PlayerSheet_264: 1849796480
+      MoveLeft_0: 1338925012
       PlayerSheet_445: 645382717
       PlayerSheet_1: -728837722
       PlayerSheet_250: -1019091957
@@ -11182,8 +11186,6 @@ TextureImporter:
       PlayerSheet_249: -1736909164
       PlayerSheet_234: 284891574
       PlayerSheet_97: 1824729369
-      PlayerSheet_31: 602772339
-      PlayerSheet_34: -1974767947
       PlayerSheet_296: -1251599572
       PlayerSheet_209: 2089449950
       PlayerSheet_89: -289661006
@@ -11198,6 +11200,7 @@ TextureImporter:
       PlayerSheet_76: 292759353
       PlayerSheet_110: 473122234
       PlayerSheet_212: -1831694055
+      Idle_4: -1844926227
       PlayerSheet_373: 970024386
       PlayerSheet_40: -510996567
       PlayerSheet_194: 737502705
@@ -11206,14 +11209,14 @@ TextureImporter:
       PlayerSheet_453: 1091723577
       PlayerSheet_51: 507519659
       PlayerSheet_406: -1624196854
+      MoveRight_4: -773290611
       PlayerSheet_275: 1306497555
       PlayerSheet_444: 1511477676
-      PlayerSheet_19: -455869861
       PlayerSheet_269: 113039161
       PlayerSheet_327: -404947992
+      PlayerSheet_482: 508144007
       PlayerSheet_312: 1886250420
       PlayerSheet_69: -1419599599
-      PlayerSheet_482: 508144007
       PlayerSheet_43: -1892790674
       PlayerSheet_58: 714972728
       PlayerSheet_196: 1417314087
@@ -11241,7 +11244,6 @@ TextureImporter:
       PlayerSheet_166: -313187292
       PlayerSheet_265: 1310850678
       PlayerSheet_67: -390010111
-      PlayerSheet_30: 1338925012
       PlayerSheet_242: 1652247132
       PlayerSheet_407: 467496948
       PlayerSheet_106: -1982725575
@@ -11255,24 +11257,20 @@ TextureImporter:
       PlayerSheet_139: 1907149432
       PlayerSheet_332: -2110186554
       PlayerSheet_486: 1982735470
-      PlayerSheet_469: 1929724816
       PlayerSheet_370: 2038956185
       PlayerSheet_142: -72480939
       PlayerSheet_497: 811685265
       PlayerSheet_465: -1059445121
-      PlayerSheet_24: 2125618745
       PlayerSheet_228: -1482684535
-      PlayerSheet_168: 1599658357
-      PlayerSheet_27: 1045032010
       PlayerSheet_251: 543688247
-      PlayerSheet_492: 1479054722
+      PlayerSheet_168: 1599658357
       PlayerSheet_462: -31086005
+      PlayerSheet_492: 1479054722
       PlayerSheet_123: 508159431
       PlayerSheet_454: -112493561
       PlayerSheet_491: 1163103897
       PlayerSheet_143: 501076396
       PlayerSheet_130: 525628584
-      PlayerSheet_26: -1981267734
       PlayerSheet_315: 537257861
       PlayerSheet_300: 1362994356
       PlayerSheet_436: 1275365832
@@ -11310,15 +11308,18 @@ TextureImporter:
       PlayerSheet_374: 1710090029
       PlayerSheet_229: -2124083379
       PlayerSheet_158: -1800005892
-      PlayerSheet_512: 1523742479
+      PlayerSheet_272: -1456483316
       PlayerSheet_71: -260754659
-      PlayerSheet_422: 1366904703
+      MoveLeft_1: 602772339
       PlayerSheet_463: -1455016435
       PlayerSheet_50: 1526028854
+      PlayerSheet_422: 1366904703
+      PlayerSheet_512: 1523742479
+      Idle_0: -1473076917
       PlayerSheet_432: 1703087517
-      PlayerSheet_272: -1456483316
       PlayerSheet_157: -1226834299
       PlayerSheet_267: -309859578
+      MoveRight_2: -1809991098
       PlayerSheet_417: -1739578160
       PlayerSheet_391: 826867191
       PlayerSheet_116: 1131942051
@@ -11333,25 +11334,24 @@ TextureImporter:
       PlayerSheet_399: -1073285039
       PlayerSheet_369: 1244566781
       PlayerSheet_435: -1669627669
-      PlayerSheet_32: 40132266
       PlayerSheet_189: -2068561208
       PlayerSheet_233: 1775947114
       PlayerSheet_185: 773429480
       PlayerSheet_256: 1864746066
       PlayerSheet_304: -2024778951
       PlayerSheet_159: 584905261
-      PlayerSheet_516: -1094731824
       PlayerSheet_263: -231763932
       PlayerSheet_320: -1437995834
       PlayerSheet_287: 1376152564
       PlayerSheet_485: 515624098
+      MoveRight_3: -556557137
       PlayerSheet_210: -204435872
-      PlayerSheet_470: -1844926227
+      Idle_3: 1929724816
+      MoveRight_1: -455869861
       PlayerSheet_236: -631498548
       PlayerSheet_394: 447386855
       PlayerSheet_208: -1971153918
       PlayerSheet_53: 851832253
-      PlayerSheet_468: 627245232
       PlayerSheet_131: -554498207
       PlayerSheet_44: 2021683231
       PlayerSheet_54: 421752637
@@ -11391,6 +11391,7 @@ TextureImporter:
       PlayerSheet_7: -1339989334
       PlayerSheet_202: -2096884147
       PlayerSheet_274: 1059384431
+      MoveDown_1: -1299039318
       PlayerSheet_10: 25916899
       PlayerSheet_353: 1164572640
       PlayerSheet_13: 1971708397
@@ -11399,7 +11400,6 @@ TextureImporter:
       PlayerSheet_397: 1383116210
       PlayerSheet_146: 1061293660
       PlayerSheet_200: 301687896
-      PlayerSheet_20: -1809991098
       PlayerSheet_381: 772091776
       PlayerSheet_152: 1157220460
       PlayerSheet_109: 1830722747
@@ -11422,16 +11422,15 @@ TextureImporter:
       PlayerSheet_148: -1461266614
       PlayerSheet_239: 1648947520
       PlayerSheet_14: -1788080856
-      PlayerSheet_467: 1912838218
       PlayerSheet_342: -2118957503
       PlayerSheet_347: -1810558981
       PlayerSheet_317: -1744928397
       PlayerSheet_456: -1430661582
       PlayerSheet_162: 1416243692
       PlayerSheet_206: 817050901
-      PlayerSheet_36: -1747121610
-      PlayerSheet_237: 2006193021
       PlayerSheet_167: 1738297392
+      PlayerSheet_237: 2006193021
+      MoveUp_3: 1045032010
       PlayerSheet_345: -639629278
       PlayerSheet_429: -292943166
       PlayerSheet_112: -1520980325
@@ -11439,7 +11438,7 @@ TextureImporter:
       PlayerSheet_457: -843830148
       PlayerSheet_141: 990318068
       PlayerSheet_6: 1059895541
-      PlayerSheet_23: -606548622
+      MoveLeft_5: -2140696713
       PlayerSheet_180: 1667868514
       PlayerSheet_246: -495845425
       PlayerSheet_173: 829564969
@@ -11447,7 +11446,6 @@ TextureImporter:
       PlayerSheet_253: -856713591
       PlayerSheet_266: -1628298460
       PlayerSheet_191: -1935456844
-      PlayerSheet_35: -2140696713
       PlayerSheet_160: -607925165
       PlayerSheet_217: -569282558
       PlayerSheet_261: 1370845835
@@ -11458,19 +11456,20 @@ TextureImporter:
       PlayerSheet_306: -99658066
       PlayerSheet_390: -225227295
       PlayerSheet_489: 1130259411
+      MoveLeft_4: -1974767947
       PlayerSheet_133: 2110479706
       PlayerSheet_284: 1103016612
       PlayerSheet_500: -2119375778
       PlayerSheet_187: -1832126890
+      MoveUp_2: -1981267734
+      MoveLeft_2: 40132266
+      MoveUp_1: 848018723
       PlayerSheet_480: -122014229
       PlayerSheet_283: 496186175
       PlayerSheet_362: 544956289
-      PlayerSheet_28: 1588185591
-      PlayerSheet_17: -1473076917
       PlayerSheet_383: 1483887749
       PlayerSheet_336: 178982127
       PlayerSheet_124: -2045229898
-      PlayerSheet_29: -568842510
       PlayerSheet_227: 506736198
       PlayerSheet_105: 1717878757
       PlayerSheet_62: -51916496
@@ -11489,6 +11488,7 @@ TextureImporter:
       PlayerSheet_45: -292055706
       PlayerSheet_285: 656087972
       PlayerSheet_115: -1405089015
+      MoveDown_5: 1061586121
       PlayerSheet_299: -1997995094
       PlayerSheet_339: -89829377
       PlayerSheet_42: 154083567
@@ -11503,10 +11503,10 @@ TextureImporter:
       PlayerSheet_371: 554729332
       PlayerSheet_121: 1564047375
       PlayerSheet_355: -1821061274
-      PlayerSheet_25: 848018723
       PlayerSheet_359: -401582075
       PlayerSheet_329: 2114838111
       PlayerSheet_241: -1813894121
+      Idle_5: -1761347920
       PlayerSheet_85: 244633981
       PlayerSheet_230: -1071610673
       PlayerSheet_254: 330482449
