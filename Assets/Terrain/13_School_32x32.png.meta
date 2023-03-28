@@ -1,0 +1,344 @@
+fileFormatVersion: 2
+guid: f6c7b6c2012d16d4e8cfae95170b1479
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ball_Multi
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 933
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c3f0037facc0d41a799f1a26af4b8b
+      internalID: 1557903205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ball_Green
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 709
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f0d1ee9491c66f41923658bce829f50
+      internalID: -2137792010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ball_Red
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 709
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: affb536177c385b40874f3912c6740cf
+      internalID: -1070754993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      13_School_32x32_26: 892036437
+      13_School_32x32_35: -1579155832
+      13_School_32x32_25: -231817413
+      13_School_32x32_30: 1587665712
+      13_School_32x32_95: -1479432985
+      13_School_32x32_127: -333940080
+      13_School_32x32_90: 1515772095
+      13_School_32x32_141: -962029595
+      13_School_32x32_53: 1609074022
+      13_School_32x32_79: 1029727049
+      13_School_32x32_99: 887966466
+      13_School_32x32_65: 1061794439
+      13_School_32x32_32: -1598949753
+      13_School_32x32_89: 837288501
+      13_School_32x32_6: 1037020959
+      13_School_32x32_70: 1284386237
+      13_School_32x32_13: 745421286
+      13_School_32x32_132: 320569176
+      13_School_32x32_129: 1648103612
+      13_School_32x32_108: 1851256602
+      13_School_32x32_106: 1692076307
+      13_School_32x32_116: -835330892
+      13_School_32x32_136: -66958458
+      13_School_32x32_39: -2023462738
+      13_School_32x32_45: -19374083
+      13_School_32x32_64: 450397430
+      13_School_32x32_5: -1627254399
+      13_School_32x32_144: 62758360
+      13_School_32x32_36: -1718189668
+      13_School_32x32_24: 223113379
+      13_School_32x32_96: -1378368855
+      13_School_32x32_102: 403120958
+      13_School_32x32_130: -176474388
+      13_School_32x32_60: -1373245885
+      13_School_32x32_47: -138072912
+      13_School_32x32_105: -530044634
+      13_School_32x32_111: -1758818787
+      13_School_32x32_142: -815204744
+      13_School_32x32_131: -347498326
+      13_School_32x32_52: -703471798
+      13_School_32x32_38: -612709664
+      13_School_32x32_84: -2021111307
+      13_School_32x32_71: -869325828
+      13_School_32x32_140: 1442338336
+      13_School_32x32_115: 779280157
+      13_School_32x32_11: -1973830446
+      13_School_32x32_23: -363724907
+      13_School_32x32_27: -384756142
+      13_School_32x32_43: 715107624
+      13_School_32x32_8: -1532803338
+      13_School_32x32_59: -1936641106
+      13_School_32x32_80: 1615591026
+      13_School_32x32_2: -928823540
+      13_School_32x32_112: 861279707
+      13_School_32x32_37: -508100408
+      13_School_32x32_3: 593883125
+      13_School_32x32_75: 1302912168
+      13_School_32x32_88: -1670543475
+      13_School_32x32_120: -1390486569
+      13_School_32x32_113: -1908074684
+      13_School_32x32_16: -595517966
+      13_School_32x32_69: -275077
+      13_School_32x32_57: -629150126
+      13_School_32x32_138: -889359339
+      13_School_32x32_54: -536847123
+      13_School_32x32_118: -1743761165
+      13_School_32x32_68: -467978790
+      13_School_32x32_40: 786128162
+      13_School_32x32_49: 881645291
+      13_School_32x32_56: 1150997234
+      13_School_32x32_123: -215665177
+      13_School_32x32_19: -1149017381
+      13_School_32x32_18: 973715247
+      13_School_32x32_4: 1333461888
+      13_School_32x32_15: 1279507648
+      13_School_32x32_133: 812774674
+      13_School_32x32_76: 109702334
+      13_School_32x32_97: -572285075
+      13_School_32x32_33: -966415883
+      13_School_32x32_61: 1108644074
+      13_School_32x32_14: -1422883701
+      13_School_32x32_93: -1433588472
+      13_School_32x32_42: -1292088915
+      13_School_32x32_121: 70021589
+      13_School_32x32_94: 1724146779
+      13_School_32x32_98: -1115905815
+      13_School_32x32_1: 952000278
+      13_School_32x32_22: -1662618333
+      13_School_32x32_29: -72089398
+      13_School_32x32_51: -2116155992
+      13_School_32x32_104: -1511684651
+      13_School_32x32_63: -361870046
+      13_School_32x32_77: -1189649345
+      13_School_32x32_48: 1216874279
+      13_School_32x32_50: -404998402
+      13_School_32x32_92: 1934039874
+      13_School_32x32_85: 1739417657
+      13_School_32x32_122: -714563103
+      13_School_32x32_114: 728828870
+      13_School_32x32_86: 1989628357
+      13_School_32x32_124: 1591138362
+      13_School_32x32_128: 225331691
+      13_School_32x32_139: 999357188
+      13_School_32x32_55: -2007963763
+      13_School_32x32_109: -1092228939
+      13_School_32x32_125: -2063501620
+      Ball_Multi: 1557903205
+      13_School_32x32_103: 1204477862
+      13_School_32x32_7: -85173686
+      13_School_32x32_134: -612481806
+      13_School_32x32_72: 1666494907
+      13_School_32x32_31: 1291703893
+      13_School_32x32_73: 268949778
+      13_School_32x32_44: 459657078
+      13_School_32x32_34: -983754127
+      13_School_32x32_17: 447606467
+      13_School_32x32_91: -514455639
+      13_School_32x32_9: 1642422766
+      13_School_32x32_20: -1060081141
+      13_School_32x32_41: -422825831
+      13_School_32x32_66: -204523118
+      13_School_32x32_119: -965389750
+      13_School_32x32_117: -813532924
+      Ball_Green: -2137792010
+      13_School_32x32_12: -1565087443
+      13_School_32x32_62: 670132640
+      13_School_32x32_82: -1821026573
+      13_School_32x32_21: 568574680
+      13_School_32x32_83: -1132805468
+      13_School_32x32_67: 1363146684
+      13_School_32x32_81: 1734569573
+      13_School_32x32_143: 2039549374
+      13_School_32x32_74: 2018403724
+      13_School_32x32_28: -969947754
+      13_School_32x32_100: 967525891
+      Ball_Red: -1070754993
+      13_School_32x32_110: 1621677486
+      13_School_32x32_46: 1358827170
+      13_School_32x32_126: -1022440225
+      13_School_32x32_58: 1012345109
+      13_School_32x32_87: 1705761802
+      13_School_32x32_107: -1646069552
+      13_School_32x32_10: -320013992
+      13_School_32x32_145: 503617513
+      13_School_32x32_78: 473022923
+      13_School_32x32_101: -714919189
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
