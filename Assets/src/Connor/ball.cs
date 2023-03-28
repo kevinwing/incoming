@@ -9,8 +9,8 @@ public class ball : MonoBehaviour
     public Rigidbody2D body;
     public Collider2D coll;
 
-    //public player and speed
-    public GameObject player;
+    //private target and speed
+    public GameObject target = null;
 
     //private start location
     private Vector2 start;
@@ -19,19 +19,18 @@ public class ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //direction of player
-        direction = player.transform.position - transform.position;
-        direction.Normalize();
+        //direction of target
+        setTarget(target);
 
         //release
         release();
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    // void Update()
+    // {
         
-    }
+    // }
 
     //function to release the ball
     private void release()
@@ -43,9 +42,24 @@ public class ball : MonoBehaviour
     //function to nullify balls on hit with player
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("wall")) && (target != null))
         {
             gameObject.tag = "ball_ground";
+        }
+    }
+
+    //function to set target for ball to fly at
+    public void setTarget(GameObject targ)
+    {
+        if (target != null)
+        {
+            direction = targ.transform.position - transform.position;
+            direction.Normalize();
+        }
+        else
+        {
+            //TODO - make ball launch in direction player is facing
+            direction.Set(1.0f, 2.0f);
         }
     }
 }

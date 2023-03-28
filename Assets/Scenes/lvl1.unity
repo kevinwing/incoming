@@ -586,7 +586,7 @@ GameObject:
   - component: {fileID: 911526351}
   m_Layer: 0
   m_Name: wall (5)
-  m_TagString: Player
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -981,7 +981,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1211888629
 GameObject:
@@ -997,7 +997,7 @@ GameObject:
   - component: {fileID: 1211888633}
   m_Layer: 0
   m_Name: wall (4)
-  m_TagString: Player
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1614,7 +1614,7 @@ GameObject:
   - component: {fileID: 1587854421}
   m_Layer: 0
   m_Name: wall (6)
-  m_TagString: Player
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1787,6 +1787,18 @@ PrefabInstance:
     - target: {fileID: 5178281615997710104, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897546946569354969, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5897546946569354969, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5955443673558194381, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6365385255121248634, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
       propertyPath: m_SortingOrder
@@ -2014,7 +2026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 741263977278215264, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 741263977278215264, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2123,7 +2135,7 @@ GameObject:
   - component: {fileID: 2144848073}
   m_Layer: 0
   m_Name: wall (3)
-  m_TagString: Player
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2320,7 +2332,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2145764891
 MonoBehaviour:

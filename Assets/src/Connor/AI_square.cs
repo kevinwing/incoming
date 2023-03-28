@@ -148,7 +148,10 @@ public class AI_square : MonoBehaviour
             //throw if has ball
             if (hasBall)
             {
-                Instantiate(ball, this.transform.position, Quaternion.identity);
+                GameObject temp = GameObject.FindWithTag("Player");
+                GameObject thisBall = Instantiate(ball, this.transform.position, Quaternion.identity);
+                thisBall.GetComponent<ball>().target = temp;
+                Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), GetComponent<Collider2D>());
                 hasBall = false;
             }
         }
