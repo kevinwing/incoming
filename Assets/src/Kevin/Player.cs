@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,15 @@ public class Player : MonoBehaviour
     private Vector3 ObjPosition;
     private float angle;
     private Rigidbody2D rbody;
+    public GameObject ball;
+
+    public event EventHandler OnShoot;
+    public class OnShootEventArgs : EventArgs
+    {
+        public Vector3 playerPosition;
+        public Vector3 shootPosition;
+    }
+    // private Camera mainCamera;
     // private float xInput = 0f;
     // private float yInput = 0f;
     private int pHealth = 100;
@@ -82,25 +92,42 @@ public class Player : MonoBehaviour
     /// <summary>
     /// Method to handle the direction the player is aiming
     /// </summary>
-    private void PlayerAim()
-    {
-        mousePostion = Input.mousePosition;
-        mousePostion.z = 5.23f;
+    // private void PlayerAim()
+    // {
+    //     mousePostion = Input.mousePosition;
+    //     mousePostion.z = 5.23f;
 
-        ObjPosition = Camera.main.WorldToScreenPoint(playerTransform.position);
+    //     ObjPosition = Camera.main.WorldToScreenPoint(playerTransform.position);
 
-        mousePostion.x = mousePostion.x - ObjPosition.x;
-        mousePostion.y = mousePostion.y - ObjPosition.y;
+    //     mousePostion.x = mousePostion.x - ObjPosition.x;
+    //     mousePostion.y = mousePostion.y - ObjPosition.y;
 
-        angle = Mathf.Atan2(mousePostion.y, mousePostion.x) * Mathf.Rad2Deg;
+    //     angle = Mathf.Atan2(mousePostion.y, mousePostion.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(new Vector3(0,0, angle));
-    }
+    //     transform.rotation = Quaternion.Euler(new Vector3(0,0, angle));
+    // }
 
-    private void PlayerShoot()
-    {
-        // TODO: implement shooting the ball
-    }
+    // private void PlayerShoot()
+    // {
+    //     // TODO: implement shooting the ball
+    //     mousePostion = Input.mousePosition;
+    //     mousePostion.z = 5.23f;
+
+    //     ObjPosition = Camera.main.WorldToScreenPoint(playerTransform.position);
+
+    //     mousePostion.x = mousePostion.x - ObjPosition.x;
+    //     mousePostion.y = mousePostion.y - ObjPosition.y;
+
+    //     angle = Mathf.Atan2(mousePostion.y, mousePostion.x) * Mathf.Rad2Deg;
+    //     // Instantiate(ball, this.transform.position, Quaternion.identity);
+    //     if (Input.GetMouseButtonDown(0))
+    //     {
+    //         OnShoot?.Invoke(this, new OnShootEventArgs {
+
+    //         });
+    //     }
+    // }
+
 
     private void PlayerDodge()
     {
