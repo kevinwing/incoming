@@ -753,6 +753,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841806294}
   m_CullTransparentMesh: 1
+--- !u!1 &930055226 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6740113188335176374, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+  m_PrefabInstance: {fileID: 6740113187649834636}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &930055233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930055226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0499dee8f4c20e42b14f38c76a931cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootPosition: {fileID: 0}
+  ball: {fileID: 0}
+--- !u!4 &930055239 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5897546946569354969, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+  m_PrefabInstance: {fileID: 6740113187649834636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1037401483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -912,6 +936,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1150968226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150968227}
+  m_Layer: 0
+  m_Name: ShootPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1150968227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150968226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.232, y: -0.111, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 930055239}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1279187513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1893,6 +1948,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3160298146757037662, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
+    - target: {fileID: 3160298146757037662, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: shootPosition
+      value: 
+      objectReference: {fileID: 1150968227}
     - target: {fileID: 5897546946569354969, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
       propertyPath: m_RootOrder
       value: 9
