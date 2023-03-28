@@ -27,6 +27,10 @@ public class AI_square : MonoBehaviour
     //target vector3
     private Vector3 target;
 
+    //animator
+    [SerializeField]
+    private Animator _animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,8 +70,13 @@ public class AI_square : MonoBehaviour
         setPos();
 
         //function I found to get the AI to face the cover its moving to
-        float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        //float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
+        //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+
+        // this._animator.SetFloat("Horizontal", this.pMovement.x);
+        // this._animator.SetFloat("Vertical", this.pMovement.y);
+
+        // this._animator.SetFloat("Speed", this.pMovement.sqrMagnitude);
     }
 
     //find new index
