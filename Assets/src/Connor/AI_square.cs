@@ -10,6 +10,9 @@ public class AI_square : MonoBehaviour
     private GameObject[] all = {};
     private int index = 0;
 
+    //movement
+    private Vector2 AIMovement;
+
     //health
     [SerializeField]
     public float health = 100;
@@ -30,6 +33,9 @@ public class AI_square : MonoBehaviour
     //animator
     [SerializeField]
     private Animator _animator;
+
+    //rigidbody
+    public Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
@@ -69,14 +75,13 @@ public class AI_square : MonoBehaviour
         //set target
         setPos();
 
-        //function I found to get the AI to face the cover its moving to
-        //float angle = Mathf.Atan2(target.y, target.x) * Mathf.Rad2Deg;
-        //transform.rotation = Quaternion.Euler(Vector3.forward * angle);
+        //get direction of movement for animator
+        AIMovement = new Vector2(target.x, target.y).normalized;
 
-        // this._animator.SetFloat("Horizontal", this.pMovement.x);
-        // this._animator.SetFloat("Vertical", this.pMovement.y);
-
-        // this._animator.SetFloat("Speed", this.pMovement.sqrMagnitude);
+        //animation
+        this._animator.SetFloat("Horizontal", this.AIMovement.x);
+        this._animator.SetFloat("Vertical", this.AIMovement.y);
+        this._animator.SetFloat("Speed", this.AIMovement.sqrMagnitude);
     }
 
     //find new index

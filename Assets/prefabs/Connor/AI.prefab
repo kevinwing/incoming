@@ -106,6 +106,8 @@ MonoBehaviour:
   coll: {fileID: 0}
   ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
   hasBall: 0
+  _animator: {fileID: 7442564795016792540}
+  rb: {fileID: 6547798847543896585}
 --- !u!195 &6547798847543896587
 NavMeshAgent:
   m_ObjectHideFlags: 0
