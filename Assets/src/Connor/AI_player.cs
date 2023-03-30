@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AI_square : MonoBehaviour
+public class AI_player : MonoBehaviour
 {
     //public cover object array and tracker
     public GameObject coverPoint;
@@ -162,10 +162,10 @@ public class AI_square : MonoBehaviour
             //throw if has ball
             if (hasBall)
             {
-                GameObject temp = GameObject.FindWithTag("Untagged");
+                GameObject temp = GameObject.FindWithTag("enemy");
                 GameObject thisBall = Instantiate(ball, this.transform.position, Quaternion.identity);
-                thisBall.GetComponent<ball>().target = temp;
                 Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+                thisBall.GetComponent<ball>().target = temp;
                 hasBall = false;
             }
         }

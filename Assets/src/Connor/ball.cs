@@ -24,6 +24,8 @@ public class ball : MonoBehaviour
 
         //release
         release();
+
+        Invoke("Disable", 3.0f);
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class ball : MonoBehaviour
     {
         if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("wall")) && (target != null))
         {
-            gameObject.tag = "ball_ground";
+            Disable();
         }
     }
 
@@ -61,5 +63,10 @@ public class ball : MonoBehaviour
             //TODO - make ball launch in direction player is facing
             direction.Set(1.0f, 2.0f);
         }
+    }
+
+    private void Disable()
+    {
+        gameObject.tag = "ball_ground";
     }
 }
