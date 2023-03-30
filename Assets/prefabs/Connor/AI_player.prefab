@@ -183,7 +183,7 @@ MonoBehaviour:
   coverPoint: {fileID: 741263977278215262, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
   health: 1
   coll: {fileID: 0}
-  ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
+  ball: {fileID: 3284034116535098509, guid: 7265902be0534774c8eef75cb0bed889, type: 3}
   hasBall: 0
   _animator: {fileID: 7442564795016792540}
   rb: {fileID: 6547798847543896585}

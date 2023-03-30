@@ -25,7 +25,9 @@ public class ball : MonoBehaviour
         //release
         release();
 
-        Invoke("Disable", 3.0f);
+        //Invoke("Tag", 0.05f);
+
+        Invoke("Disable", 1.0f);
     }
 
     // Update is called once per frame
@@ -68,5 +70,10 @@ public class ball : MonoBehaviour
     private void Disable()
     {
         gameObject.tag = "ball_ground";
+    }
+
+    private void Tag()
+    {
+        gameObject.tag = "ball";
     }
 }

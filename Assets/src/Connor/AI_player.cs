@@ -175,6 +175,9 @@ public class AI_player : MonoBehaviour
     public void setHealth(float AIHealth)
     {
         health = AIHealth;
+
+        if (health == 0)
+            Destroy(gameObject);
     }
 
     //damage
@@ -206,6 +209,12 @@ public class AI_player : MonoBehaviour
             hasBall = true;
             Destroy(collision.gameObject);
             reCover();
+        }
+
+        if (collision.gameObject.CompareTag("ball"))
+        {
+            Debug.Log("HIT");
+            DoDamage(100);
         }
     }
 

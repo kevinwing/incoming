@@ -162,10 +162,10 @@ public class AI_square : MonoBehaviour
             //throw if has ball
             if (hasBall)
             {
-                GameObject temp = GameObject.FindWithTag("Untagged");
+                GameObject temp = GameObject.FindWithTag("demo");
                 GameObject thisBall = Instantiate(ball, this.transform.position, Quaternion.identity);
-                thisBall.GetComponent<ball>().target = temp;
                 Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+                thisBall.GetComponent<ball>().target = temp;
                 hasBall = false;
             }
         }
@@ -175,6 +175,9 @@ public class AI_square : MonoBehaviour
     public void setHealth(float AIHealth)
     {
         health = AIHealth;
+
+        if (health == 0)
+            Destroy(gameObject);
     }
 
     //damage
@@ -206,6 +209,12 @@ public class AI_square : MonoBehaviour
             hasBall = true;
             Destroy(collision.gameObject);
             reCover();
+        }
+
+        if (collision.gameObject.CompareTag("ball_p"))
+        {
+            Debug.Log("HIT");
+            DoDamage(100);
         }
     }
 

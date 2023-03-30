@@ -9,6 +9,8 @@ TagManager:
   - enemy
   - ball_ground
   - wall
+  - demo
+  - ball_p
   layers:
   - Default
   - TransparentFX
