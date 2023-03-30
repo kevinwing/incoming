@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6547798847543896580}
   - component: {fileID: 6547798847543896581}
-  - component: {fileID: 6547798847543896582}
   - component: {fileID: 6547798847543896587}
   - component: {fileID: 6547798847543896585}
   - component: {fileID: 963008769654313713}
   - component: {fileID: 7442564795016792540}
+  - component: {fileID: -7048714682198595554}
   m_Layer: 6
-  m_Name: AI
+  m_Name: AI_player
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 2046370917, guid: 7f86f0a7e1bd6814da29aba300335157, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -89,25 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6547798847543896582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6547798847543896583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f320355157c8314a81039819e1b00ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coverPoint: {fileID: 741263977278215262, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
-  health: 1
-  coll: {fileID: 0}
-  ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
-  hasBall: 0
-  _animator: {fileID: 7442564795016792540}
-  rb: {fileID: 6547798847543896585}
 --- !u!195 &6547798847543896587
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -187,3 +168,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-7048714682198595554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547798847543896583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fed65e64cf87b74b8afde22c97f5bbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coverPoint: {fileID: 741263977278215262, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
+  health: 1
+  coll: {fileID: 0}
+  ball: {fileID: 3284034116535098509, guid: 7265902be0534774c8eef75cb0bed889, type: 3}
+  hasBall: 0
+  _animator: {fileID: 7442564795016792540}
+  rb: {fileID: 6547798847543896585}
