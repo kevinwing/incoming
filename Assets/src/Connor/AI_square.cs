@@ -10,6 +10,9 @@ public class AI_square : MonoBehaviour
     private GameObject[] all = {};
     private int index = 0;
 
+    //public self ref
+    public GameObject AI;
+
     //movement
     private Vector2 AIMovement;
 
@@ -162,7 +165,7 @@ public class AI_square : MonoBehaviour
             //throw if has ball
             if (hasBall)
             {
-                GameObject temp = GameObject.FindWithTag("demo");
+                GameObject temp = GameObject.FindWithTag("Player");
                 GameObject thisBall = Instantiate(ball, this.transform.position, Quaternion.identity);
                 Physics2D.IgnoreCollision(ball.GetComponent<Collider2D>(), GetComponent<Collider2D>());
                 thisBall.GetComponent<ball>().target = temp;
@@ -177,7 +180,7 @@ public class AI_square : MonoBehaviour
         health = AIHealth;
 
         if (health == 0)
-            Destroy(gameObject);
+            respawn();
     }
 
     //damage
@@ -241,5 +244,13 @@ public class AI_square : MonoBehaviour
 
         //assign target
         coverPoint = closest;
+    }
+
+    //respawn new AI if hit
+    private void respawn()
+    {
+        GameObject spawn = GameObject.FindWithTag("spawner");
+        Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

@@ -67,11 +67,13 @@ public class ball : MonoBehaviour
         }
     }
 
+    //disable ball
     private void Disable()
     {
         gameObject.tag = "ball_ground";
     }
 
+    //retag ball
     private void Tag()
     {
         gameObject.tag = "ball";
