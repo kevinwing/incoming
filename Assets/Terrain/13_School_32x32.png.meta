@@ -113,6 +113,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -179,6 +191,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 13_School_32x32_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 2944
+        width: 743
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 103052d47e999024ab98471f8ea6b1c5
+      internalID: -36684784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -224,8 +257,8 @@ TextureImporter:
       13_School_32x32_102: 403120958
       13_School_32x32_130: -176474388
       13_School_32x32_60: -1373245885
-      13_School_32x32_47: -138072912
       13_School_32x32_105: -530044634
+      13_School_32x32_47: -138072912
       13_School_32x32_111: -1758818787
       13_School_32x32_142: -815204744
       13_School_32x32_131: -347498326
@@ -268,6 +301,7 @@ TextureImporter:
       13_School_32x32_133: 812774674
       13_School_32x32_76: 109702334
       13_School_32x32_97: -572285075
+      13_School_32x32_0: -36684784
       13_School_32x32_33: -966415883
       13_School_32x32_61: 1108644074
       13_School_32x32_14: -1422883701
