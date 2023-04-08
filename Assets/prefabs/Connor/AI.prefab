@@ -101,9 +101,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f320355157c8314a81039819e1b00ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  manager: {fileID: 0}
   coverPoint: {fileID: 741263977278215262, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
+  AI: {fileID: 0}
   health: 1
-  coll: {fileID: 0}
+  coll: {fileID: 963008769654313713}
   ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
   hasBall: 0
   _animator: {fileID: 7442564795016792540}

@@ -8,6 +8,9 @@ public class AI_square : MonoBehaviour
     //camera
     public GameObject camera;
 
+    //manager
+    public GameObject manager;
+
     //public cover object array and tracker
     public GameObject coverPoint;
     private GameObject[] all = {};
@@ -251,11 +254,13 @@ public class AI_square : MonoBehaviour
     //respawn new AI if hit
     private void respawn()
     {
-        //total velocity
+        //sling enemy
         rb.velocity = new Vector2(7f, 7f);
 
-        GameObject spawn = GameObject.FindWithTag("spawner");
-        Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
+        //check against manager - TODO
+        //manager.GetComponent<GameManager>().newEnemy();
+
+        //shake and kill
         shake();
         Invoke("kill", 0.5f);
     }
@@ -266,9 +271,11 @@ public class AI_square : MonoBehaviour
         camera.GetComponent<camera_shake>().TriggerShake();
     }
 
-    //kill
+    //spawn new AI and kill
     private void kill()
     {
+        GameObject spawn = GameObject.FindWithTag("spawner");
+        Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

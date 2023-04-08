@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int numberEnemies = 5;
+
     // Start is called before the first frame update
     // void Start()
     // {
@@ -15,4 +17,14 @@ public class GameManager : MonoBehaviour
     // {
         
     // }
+
+    public void newEnemy()
+    {
+        if (numberEnemies > 0)
+        {
+            GameObject spawn = GameObject.FindWithTag("spawner");
+            Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
+            --numberEnemies;
+        }
+    }
 }
