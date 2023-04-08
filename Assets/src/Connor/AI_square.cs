@@ -5,6 +5,9 @@ using UnityEngine.AI;
 
 public class AI_square : MonoBehaviour
 {
+    //camera
+    public GameObject camera;
+
     //public cover object array and tracker
     public GameObject coverPoint;
     private GameObject[] all = {};
@@ -216,7 +219,6 @@ public class AI_square : MonoBehaviour
 
         if (collision.gameObject.CompareTag("ball_p"))
         {
-            Debug.Log("HIT");
             DoDamage(100);
         }
     }
@@ -249,8 +251,24 @@ public class AI_square : MonoBehaviour
     //respawn new AI if hit
     private void respawn()
     {
+        //total velocity
+        rb.velocity = new Vector2(7f, 7f);
+
         GameObject spawn = GameObject.FindWithTag("spawner");
         Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
+        shake();
+        Invoke("kill", 0.5f);
+    }
+
+    //func to shake camera on hit
+    void shake()
+    {
+        camera.GetComponent<camera_shake>().TriggerShake();
+    }
+
+    //kill
+    private void kill()
+    {
         Destroy(gameObject);
     }
 }
