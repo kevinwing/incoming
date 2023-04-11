@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 2764098570913679510}
   - component: {fileID: 6957887876761329319}
   - component: {fileID: 1668923996101092035}
-  - component: {fileID: 2539636419360003384}
+  - component: {fileID: 2247323794502030131}
   - component: {fileID: 8413533989092878839}
   - component: {fileID: 4803637595013320521}
-  - component: {fileID: 2206603567970864964}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -34,8 +33,7 @@ Transform:
   m_LocalPosition: {x: -1.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2206603569882639014}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -127,7 +125,7 @@ MonoBehaviour:
   pSpeed: 0
   _animator: {fileID: 4803637595013320521}
   ball: {fileID: 0}
---- !u!114 &2539636419360003384
+--- !u!114 &2247323794502030131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,11 +134,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2206603567970864959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0499dee8f4c20e42b14f38c76a931cc, type: 3}
+  m_Script: {fileID: 11500000, guid: d90d4a2f8f1fa0342bb1e5a9f905e0fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootPosition: {fileID: 2206603569882639014}
-  ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
 --- !u!70 &8413533989092878839
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -177,48 +173,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &2206603567970864964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206603567970864959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0499dee8f4c20e42b14f38c76a931cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootPosition: {fileID: 0}
-  ball: {fileID: 0}
---- !u!1 &2206603569882639015
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2206603569882639014}
-  m_Layer: 7
-  m_Name: ShootPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2206603569882639014
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206603569882639015}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.232, y: -0.111, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2206603567970864962}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
