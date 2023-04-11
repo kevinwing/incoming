@@ -18,6 +18,7 @@ public class PlayerAim : MonoBehaviour
     private void Update()
     {
         HandleAiming();
+        HandleShooting();
     }
 
     private void HandleAiming()
@@ -33,11 +34,10 @@ public class PlayerAim : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePostition = GetMouseWorldPosition();
+            // Vector3 mousePostition = GetMouseWorldPosition();
             ballPosition = ballTransform.position;
 
-            GameObject newBall = Instantiate(Ball, ballPosition, Quaternion.identity);
-            // newBall.setTarget()
+            Instantiate(Ball, ballPosition, Quaternion.identity);
         }
     }
 

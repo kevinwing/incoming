@@ -7940,6 +7940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Aim
       objectReference: {fileID: 0}
+    - target: {fileID: 2247323794502030131, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: Ball
+      value: 
+      objectReference: {fileID: 3284034116535098509, guid: 7265902be0534774c8eef75cb0bed889, type: 3}
     m_RemovedComponents:
     - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
