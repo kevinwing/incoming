@@ -46,12 +46,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Default
-    uniqueID: 0
+  - name: Background
+    uniqueID: 1606753819
     locked: 0
   - name: Entities
     uniqueID: 3423414563
     locked: 0
   - name: Ball
     uniqueID: 707258345
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1243757853
     locked: 0
