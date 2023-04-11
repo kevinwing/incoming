@@ -57,13 +57,16 @@ public class ball : MonoBehaviour
     {
         if (target != null)
         {
+            //shoot at passed target
             direction = targ.transform.position - transform.position;
             direction.Normalize();
         }
         else
         {
-            //TODO - make ball launch in direction player is facing
-            direction.Set(1.0f, 2.0f);
+            //make ball launch in direction player is facing
+            GameObject player = GameObject.FindWithTag("Player");
+            GameObject playerChild = player.transform.GetChild(0).gameObject;
+            direction = playerChild.transform.right;
         }
     }
 
