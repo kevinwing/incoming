@@ -3,49 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AI_square : MonoBehaviour
+public class AI_square : AI
 {
-    //camera
-    public GameObject camera;
-
-    //manager
-    public GameObject manager;
-
-    //public cover object array and tracker
-    public GameObject coverPoint;
-    private GameObject[] all = {};
-    private int index = 0;
-
-    //public self ref
-    public GameObject AI;
-
-    //movement
-    private Vector2 AIMovement;
-
-    //health
-    [SerializeField]
-    public float health = 100;
-
-    //collider
-    public Collider2D coll;
-
-    //dodgeball ref and has bool
-    public GameObject ball;
-    public bool hasBall;
-
-    //nav mesh ref
-    NavMeshAgent agent;
-
-    //target vector3
-    private Vector3 target;
-
-    //animator
-    [SerializeField]
-    private Animator _animator;
-
-    //rigidbody
-    public Rigidbody2D rb;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -93,28 +52,10 @@ public class AI_square : MonoBehaviour
         this._animator.SetFloat("Speed", this.AIMovement.sqrMagnitude);
     }
 
-    //find new index
-    public void reIndex()
-    {
-        index = (int)Random.Range(0, all.Length - 1);
-    }
-
-    //get index
-    public int getIndex()
-    {
-        return index;
-    }
-
     //trigger recover
     private void OnTriggerEnter2D(Collider2D coll)
     {
         Invoke("reCover", 2.0f);
-    }
-
-    //set nav mesh destination
-    private void setPos()
-    {
-        agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
     }
 
     //find new cover
@@ -141,12 +82,6 @@ public class AI_square : MonoBehaviour
             //run down nearest ball
             chaseBall();
         }
-    }
-
-    //get health
-    public float GetHealth()
-    {
-        return health;
     }
 
     //throw new ball
@@ -180,35 +115,6 @@ public class AI_square : MonoBehaviour
         }
     }
 
-    //set health
-    public void setHealth(float AIHealth)
-    {
-        health = AIHealth;
-
-        if (health == 0)
-            respawn();
-    }
-
-    //damage
-    public void DoDamage(float damage)
-    {
-        if(health - damage >= 0)
-        {
-            if (health - damage > 100)
-            {
-                setHealth(100);
-            }
-            else
-            {
-                setHealth(health - damage);
-            }
-        }
-        else
-        {
-            setHealth(0);
-        }
-    }
-
     //2d collider handler
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -223,6 +129,7 @@ public class AI_square : MonoBehaviour
         if (collision.gameObject.CompareTag("ball_p"))
         {
             DoDamage(100);
+            Debug.Log("HIT");
         }
     }
 
@@ -249,33 +156,5 @@ public class AI_square : MonoBehaviour
 
         //assign target
         coverPoint = closest;
-    }
-
-    //respawn new AI if hit
-    private void respawn()
-    {
-        //sling enemy
-        rb.velocity = new Vector2(7f, 7f);
-
-        //check against manager - TODO
-        //manager.GetComponent<GameManager>().newEnemy();
-
-        //shake and kill
-        shake();
-        Invoke("kill", 0.5f);
-    }
-
-    //func to shake camera on hit
-    void shake()
-    {
-        camera.GetComponent<camera_shake>().TriggerShake();
-    }
-
-    //spawn new AI and kill
-    private void kill()
-    {
-        GameObject spawn = GameObject.FindWithTag("spawner");
-        Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
-        Destroy(gameObject);
     }
 }
