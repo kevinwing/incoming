@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void SetHealth(float health){
         currentHealth = health;
-        //healthbar.setHealth(health);  //Object reference issue from Damage Test
+        healthbar.setHealth(health);  //Object reference issue from Damage Test
     }
     public float GetHealth(){
         return currentHealth;
@@ -72,20 +72,21 @@ public class PlayerHealth : MonoBehaviour
 
     // On collision with ball TakeDamage
     private void OnCollisionEnter2D(Collision2D collision){
-        if(collision.gameObject.CompareTag("ball")){
+        if(collision.gameObject.CompareTag("ball") || collision.gameObject.CompareTag("ball_ground")){
             DoDamage(20);
+            Debug.Log("Ball Collision");
             
-        }
+        //}
         //if(collision.gameObject.CompareTag("goal")){
             //GameManager.Victory();
-        //}
+        }
     }
 /*
         if(collision.gameObject.CompareTag("coin")){
 
             GameManager.coinScore();
             Debug.Log("player.coinscore");
-
+=
         }
     }
 */

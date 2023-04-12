@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        Debug.Log("Trigger Background Music");
+        //Debug.Log("Trigger Background Music");
 
     
     }

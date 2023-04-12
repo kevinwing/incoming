@@ -9621,6 +9621,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8380662868019774750, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 1827528339}
+    - target: {fileID: -8380662868019774750, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1930776722}
     - target: {fileID: 1668923996101092035, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
       propertyPath: ball
       value: 
