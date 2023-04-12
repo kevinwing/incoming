@@ -60,6 +60,7 @@ public class AudioManager : MonoBehaviour
         }
         if( sceneName == "Game"){
             Play("Action");
+            
         }
 
     
@@ -71,6 +72,10 @@ public class AudioManager : MonoBehaviour
         if(!x.source.isPlaying || name == "Hit"){
             x.source.Play();
         }
+        if( name == "Action"){
+            Stop("Title");
+        }
+
     } 
 
     public void Stop (string name){

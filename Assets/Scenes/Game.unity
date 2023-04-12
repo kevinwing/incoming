@@ -6955,6 +6955,7 @@ MonoBehaviour:
   pauseButton: {fileID: 0}
   settingsMenu: {fileID: 0}
   healthBar: {fileID: 0}
+  GameManager: {fileID: 0}
 --- !u!1 &712127069
 GameObject:
   m_ObjectHideFlags: 0
@@ -7325,6 +7326,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932091981}
   m_CullTransparentMesh: 1
+--- !u!1001 &955282920
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3867646734052178868, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.12959
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5263664
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 265.936
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3867646734052178870, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+--- !u!114 &955282921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3867646734052178869, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
+  m_PrefabInstance: {fileID: 955282920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4084b09f89b804e96c6c083d270480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1037401483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7501,6 +7570,7 @@ MonoBehaviour:
   pauseButton: {fileID: 1105663427}
   settingsMenu: {fileID: 1997222711}
   healthBar: {fileID: 1827528336}
+  GameManager: {fileID: 955282921}
 --- !u!1 &1105663427
 GameObject:
   m_ObjectHideFlags: 0

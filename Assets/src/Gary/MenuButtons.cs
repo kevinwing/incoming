@@ -9,11 +9,11 @@ public class MenuButtons : MonoBehaviour
     public GameObject helpMenuUI;
     public GameObject settingsMenuUI;
     public GameObject returnButton;
+    public GameManager GameManager;
 
 
     public void PlayGame(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1 );
-        FindObjectOfType<AudioManager>().PlayNext();
+        GameManager.SetGameState(GameState.Wave);
     }
 
     public void Quit(){
