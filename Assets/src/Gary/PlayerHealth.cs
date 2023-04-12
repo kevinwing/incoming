@@ -41,6 +41,11 @@ public class PlayerHealth : MonoBehaviour
             }
             else{
                 SetHealth(currentHealth - damage);
+                FindObjectOfType<AudioManager>().Play("Hit");
+                if(currentHealth < 40){
+                    FindObjectOfType<AudioManager>().PlayLowHealthAudio();
+                    
+                }
             }
         }
         else{
@@ -73,7 +78,7 @@ public class PlayerHealth : MonoBehaviour
     // On collision with ball TakeDamage
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("ball") || collision.gameObject.CompareTag("ball_ground")){
-            DoDamage(20);
+            DoDamage(80);
             Debug.Log("Ball Collision");
             
         //}

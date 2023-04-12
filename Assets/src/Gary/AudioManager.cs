@@ -1,22 +1,35 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
+/*
+*   call play function on clip within sounds array in AudioManager with:
+*      FindObjectOfType<AudioManager>().Play("clipname");
+*
+*
+*
+*/
+
 public class AudioManager : MonoBehaviour
 {
-    
 
+    public Sound[] sounds;
+
+    
     public static AudioManager Instance;
     public AudioMixer masterMixer;
     [SerializeField] AudioSource musicSource, effectSource;
     [SerializeField] Slider masterSlider;
     public float frequency;
+    public PlayerHealth pHealth;
 
+    
 
     void Awake(){
-        //make singleton
+        //make singleton -- Make sure this persists through scenes and that there are not multiple instances.
         if (Instance == null){
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -24,12 +37,31 @@ public class AudioManager : MonoBehaviour
         else{
             Destroy(gameObject);
         }
-
-        //Debug.Log("Trigger Background Music");
+        
+        foreach(Sound x in sounds){  //Adds audiosouce per sound added to sounds array in inspector, adds parameters
+            x.source = gameObject.AddComponent<AudioSource>();
+            x.source.clip = x.clip;
+            x.source.volume = x.volume;
+            x.source.loop = x.loop;
+        }
 
     
     }
+    
+    public void Play (string name){
+        Sound x = Array.Find(sounds, sound => sound.name == name);  // Find sound with name
+        
+        if(!x.source.isPlaying || name == "Hit"){
+            x.source.Play();
+        }
+    } 
 
+    public void PlayLowHealthAudio (){
+        Play("Heartbeat");
+        Play("Ringing");
+
+    }
+    
     public void SetMasterLvel(float sliderValue){
 
         masterMixer.SetFloat("masterVol", Mathf.Log10(sliderValue) * 20);

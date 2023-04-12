@@ -9233,11 +9233,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9243614a329e24ec995202d818987146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sounds:
+  - name: Ringing
+    clip: {fileID: 8300000, guid: 3451d28fa282a42589ce272694d65eec, type: 3}
+    volume: 0.736
+    loop: 0
+    source: {fileID: 0}
+  - name: Heartbeat
+    clip: {fileID: 8300000, guid: b48358ad5557e4add93d6f347cf4ff9f, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Throw
+    clip: {fileID: 8300000, guid: ed4d9e662862348e0a74a06f071cc3ff, type: 3}
+    volume: 0.888
+    loop: 0
+    source: {fileID: 0}
+  - name: Title
+    clip: {fileID: 8300000, guid: 08449a316e05d43c48af8b6117972d3c, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Hit
+    clip: {fileID: 8300000, guid: 756d62f76b7e54d5eb23c17ae85ac9b7, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
   masterMixer: {fileID: 24100000, guid: 01daa40b4412942f3887c2942a22f5ab, type: 2}
   musicSource: {fileID: 1650805906}
   effectSource: {fileID: 316678221}
   masterSlider: {fileID: 343592707}
   frequency: 0
+  pHealth: {fileID: 0}
 --- !u!114 &1930776723
 MonoBehaviour:
   m_ObjectHideFlags: 0
