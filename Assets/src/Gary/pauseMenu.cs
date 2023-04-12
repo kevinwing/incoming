@@ -28,14 +28,14 @@ public class pauseMenu : MonoBehaviour
         pauseButton.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
-        GameManager.SetGameState(GameState.Menu);
+        GameManager.SetGameState(GameState.Wave);
     }
     public void Pause(){
         pauseMenuUI.SetActive(true);
         pauseButton.SetActive(false);
         Time.timeScale = 0f;
         isPaused = true;
-        GameManager.SetGameState(GameState.Menu);
+        GameManager.SetGameState(GameState.Paused);
         
     }
     public void Quit(){

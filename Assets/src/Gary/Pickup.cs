@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class Pickup : MonoBehaviour
+{
+    public PlayerHealth phealth;
+
+    public int healthBoost = 10;
+
+    void Awake(){
+
+        phealth = FindObjectOfType<PlayerHealth>();
+        
+
+    }
+
+
+    void OnTriggerEnter2D(Collider2D collision){
+        
+        if(collision.CompareTag("Player")){
+            TriggerBonus();
+        }
+    }
+
+
+    public virtual void TriggerBonus() {
+
+        if(phealth.currentHealth < 100){
+                phealth.AddHealth(healthBoost);
+                Destroy(gameObject);
+        }
+    }
+
+}

@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     public float currentHealth;
 
     
-    float regenRate = 1f;
+    float regenRate = .5f;
     
     void Awake(){
         rBody = GetComponent<Rigidbody2D>();
@@ -30,6 +30,21 @@ public class PlayerHealth : MonoBehaviour
     public float GetHealth(){
         return currentHealth;
     }
+
+    public void AddHealth(int health){
+        if(currentHealth + health > 100){
+            SetHealth(100);
+        }
+        else{
+            SetHealth(currentHealth + health);
+        }
+    }
+
+    public void AddRegen(float rate){
+        regenRate += rate;
+
+    }
+
 
     public void DoDamage(int damage){
         //audioSource.clip = hitSound;
