@@ -21,8 +21,12 @@ public class AudioManager : MonoBehaviour
     
     public static AudioManager Instance;
     public AudioMixer masterMixer;
-    [SerializeField] AudioSource musicSource, effectSource;
-    [SerializeField] Slider masterSlider;
+    [SerializeField] 
+    AudioSource musicSource, effectSource;
+    
+    [SerializeField] 
+    Slider masterSlider;
+   
     public float frequency;
     public PlayerHealth pHealth;
 
@@ -43,7 +47,10 @@ public class AudioManager : MonoBehaviour
             x.source.clip = x.clip;
             x.source.volume = x.volume;
             x.source.loop = x.loop;
+            x.source.outputAudioMixerGroup = x.audioMixerGroup;
         }
+
+        Play("Title");
 
     
     }
@@ -56,9 +63,23 @@ public class AudioManager : MonoBehaviour
         }
     } 
 
+    public void Stop (string name){
+        Sound x = Array.Find(sounds, sound => sound.name == name);  // Find sound with name
+        
+        if(x.source.isPlaying){
+            x.source.Stop();
+        }
+    }
+
     public void PlayLowHealthAudio (){
         Play("Heartbeat");
         Play("Ringing");
+
+    }
+
+    public void PlayNext (){
+        Play("Action");
+        Stop("Title");
 
     }
     

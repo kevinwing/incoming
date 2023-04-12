@@ -86,14 +86,6 @@ public class PlayerHealth : MonoBehaviour
             //GameManager.Victory();
         }
     }
-/*
-        if(collision.gameObject.CompareTag("coin")){
 
-            GameManager.coinScore();
-            Debug.Log("player.coinscore");
-=
-        }
-    }
-*/
 
 }
