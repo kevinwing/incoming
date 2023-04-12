@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 /*
 *   call play function on clip within sounds array in AudioManager with:
@@ -30,6 +31,8 @@ public class AudioManager : MonoBehaviour
     public float frequency;
     public PlayerHealth pHealth;
 
+    Scene m_scene;
+    string sceneName;
     
 
     void Awake(){
@@ -50,7 +53,14 @@ public class AudioManager : MonoBehaviour
             x.source.outputAudioMixerGroup = x.audioMixerGroup;
         }
 
-        Play("Title");
+        m_scene = SceneManager.GetActiveScene();
+        sceneName = m_scene.name;
+        if(  sceneName == "Main Menu"){
+            Play("Title");
+        }
+        if( sceneName == "Game"){
+            Play("Action");
+        }
 
     
     }
