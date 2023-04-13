@@ -2,8 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI_boss : AI
+public sealed class AI_boss : AI
 {
+    //insurance of singleton properties
+    private static readonly AI_boss instance = new AI_boss();
+
+    static AI_boss() {}
+
+    private AI_boss() {}
+
+    public static AI_boss Instance
+    {
+        get { return instance; }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
