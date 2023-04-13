@@ -12,6 +12,9 @@ TagManager:
   - demo
   - ball_p
   - spawner
+  - spawn_point
+  - boss_spawn_point
+  - player_spawn
   layers:
   - Default
   - TransparentFX
