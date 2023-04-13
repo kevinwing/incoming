@@ -39,7 +39,9 @@ public class Pickup : MonoBehaviour
         if(phealth.currentHealth < 100){
                 phealth.AddHealth(healthBoost);
                 FindObjectOfType<AudioManager>().Play("Pickup");
+                gameObject.SetActive(false);
                 Destroy(gameObject);
+                
         }
     }
 

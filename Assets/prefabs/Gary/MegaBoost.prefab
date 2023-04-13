@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3021161176511250905}
   - component: {fileID: 1403297092258802983}
   - component: {fileID: 8778128675276608047}
+  - component: {fileID: 4040934002430365406}
   m_Layer: 0
   m_Name: MegaBoost
   m_TagString: Untagged
@@ -101,3 +102,17 @@ CircleCollider2D:
   m_Offset: {x: -0.00000011386271, y: 0.089626454}
   serializedVersion: 2
   m_Radius: 0.04497379
+--- !u!114 &4040934002430365406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155597105201215517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b3cc9e07e3440e3bb143a44aac9ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  phealth: {fileID: 0}
+  healthBoost: 10

@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
+    path: Assets/Scenes/Game.unity
+    guid: af419e491d37ca64e93314f4eb493dc0
+  - enabled: 0
     path: Assets/tst/Gary/StressTest.unity
     guid: e66d7a607f309444fb3de7c2a0ad67a4
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: ddfd899b27f42437780b570f7a3df6af
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: af419e491d37ca64e93314f4eb493dc0
+    path: Assets/Scenes/lvl1.unity
+    guid: 076c80ff356b87f48b4cdef7b7f5752a
   m_configObjects: {}
