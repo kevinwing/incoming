@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LevelSpawner : MonoBehaviour
 {
+    [SerializeField] private EnemyPool enemyPool;
 
-}
-
-public class Wave
-{
-
+    private void Start()
+    {
+        
+    }
 }
