@@ -6,6 +6,11 @@ public class FollowCamera : MonoBehaviour
 {
     public Transform playerTransform; // reference for the Player transform
 
+    private void Awake()
+    {
+        playerTransform = GameObject.Find("Player").transform;
+    }
+
     // Called when physics events occur
     void FixedUpdate()
     {
