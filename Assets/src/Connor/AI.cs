@@ -119,7 +119,7 @@ public class AI : MonoBehaviour
     }
 
     //spawn new AI and kill
-    private void kill()
+    public virtual void kill()
     {
         GameObject spawn = GameObject.FindWithTag("spawner");
         Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
