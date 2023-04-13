@@ -9,7 +9,7 @@ public class LevelSpawner : LevelSpawnerBase
 
     private void Awake()
     {
-        Instantiate(playerPrefab, new Vector3(0,0,0), new Quaternion());
+        // Instantiate(playerPrefab, new Vector3(0,0,0), new Quaternion());
     }
 
     private void Start()
@@ -27,6 +27,4 @@ public class LevelSpawner : LevelSpawnerBase
     {
         return spawnPoints.Length * spawnPerPoint;
     }
-
-
 }
