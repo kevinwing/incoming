@@ -14,12 +14,12 @@ public class PlayerPickupBall : MonoBehaviour
         }
     }
 
-    public void Set(bool hasBall)
+    public void SetHasBall(bool hasBall)
     {
         this.hasBall = hasBall;
     }
 
-    public bool Get()
+    public bool GetHasBall()
     {
         return hasBall;
     }

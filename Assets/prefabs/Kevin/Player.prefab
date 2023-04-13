@@ -128,10 +128,6 @@ GameObject:
   - component: {fileID: 2764098570913679510}
   - component: {fileID: 6957887876761329319}
   - component: {fileID: 1668923996101092035}
-  - component: {fileID: 2247323794502030131}
-  - component: {fileID: 8491110919244288173}
-  - component: {fileID: 5640577677731259563}
-  - component: {fileID: -5693839806160581}
   - component: {fileID: 8413533989092878839}
   - component: {fileID: -8380662868019774750}
   - component: {fileID: 4803637595013320521}
@@ -243,60 +239,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0efd0bbfdfe32e849aa17e640ad47bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0
-  ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
---- !u!114 &2247323794502030131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206603567970864959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d90d4a2f8f1fa0342bb1e5a9f905e0fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerPickupBall: {fileID: 0}
---- !u!114 &8491110919244288173
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206603567970864959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a428a66680face4ab2fa83fdaf8290c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _ball: {fileID: 3284034116535098509, guid: 7265902be0534774c8eef75cb0bed889, type: 3}
   _animator: {fileID: 4803637595013320521}
---- !u!114 &5640577677731259563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206603567970864959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ec25b1b5b201ba498805e29dadde7a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5693839806160581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206603567970864959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7880a65e222acd47bfb34638a9aac20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 3284034116535098509, guid: 7265902be0534774c8eef75cb0bed889, type: 3}
-  playerPickupBall: {fileID: 0}
+  _speed: 0
+  _health: 0
+  _is_dead: 0
 --- !u!70 &8413533989092878839
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
