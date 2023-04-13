@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class AI : MonoBehaviour
 {
+    /* ---VARIABLES--- */
+
     //camera
     public GameObject camera;
 
@@ -46,6 +48,16 @@ public class AI : MonoBehaviour
     //rigidbody
     public Rigidbody2D rb;
 
+    //Private Class Data variable
+    private AI_data aiData;
+
+    /* ---FUNCTIONS--- */
+
+    void Awake()
+    {
+        aiData = new AI_data(100.0f, this);
+    }
+
     //find new index
     public void reIndex()
     {
@@ -64,38 +76,23 @@ public class AI : MonoBehaviour
         agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
     }
 
-    //get health
-    public float GetHealth()
-    {
-        return health;
-    }
-
-    //set health
-    public void setHealth(float AIHealth)
-    {
-        health = AIHealth;
-
-        if (health == 0)
-            respawn();
-    }
-
     //damage
     public void DoDamage(float damage)
     {
-        if(health - damage >= 0)
+        if(aiData.getHealth() - damage >= 0)
         {
-            if (health - damage > 100)
+            if (aiData.getHealth() - damage > 100)
             {
-                setHealth(100);
+                aiData.setHealth(100);
             }
             else
             {
-                setHealth(health - damage);
+                aiData.setHealth(aiData.getHealth() - damage);
             }
         }
         else
         {
-            setHealth(0);
+            aiData.setHealth(0);
         }
     }
 
@@ -124,5 +121,29 @@ public class AI : MonoBehaviour
         GameObject spawn = GameObject.FindWithTag("spawner");
         Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public class AI_data
+    {
+        private float Health;
+        private AI aiInstance;
+
+        public float getHealth()
+        {
+            return Health;
+        }
+
+        public void setHealth(float h)
+        {
+            Health = h;
+            if (Health <= 0)
+                aiInstance.respawn();
+        }
+
+        public AI_data(float health, AI ai)
+        {
+            Health = health;
+            aiInstance = ai;
+        }
     }
 }
