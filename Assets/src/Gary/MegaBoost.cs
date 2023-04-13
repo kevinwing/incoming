@@ -21,6 +21,7 @@ public class MegaBoost : Pickup
                 phealth.AddHealth(healthBoost*2);
                 FindObjectOfType<AudioManager>().Play("MegaBoost");
                 phealth.AddRegen(1f);
+                gameObject.SetActive(false);
                 Destroy(gameObject);
                 
         }
