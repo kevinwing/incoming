@@ -5,38 +5,25 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private float pSpeed;
 
-    private Vector2 pMovement;
+    [SerializeField] private float _speed;
 
-    [SerializeField]
-    private Animator _animator;
-
-    private Transform playerTransform;
-    private Vector3 mousePostion;
-    private Vector3 ObjPosition;
-    private float angle;
-    private Rigidbody2D rbody;
-    public GameObject ball;
-
-    // public event EventHandler OnShoot;
-    // public class OnShootEventArgs : EventArgs
-    // {
-    //     public Vector3 playerPosition;
-    //     public Vector3 shootPosition;
-    // }
-    // private Camera mainCamera;
-    // private float xInput = 0f;
-    // private float yInput = 0f;
-    private int pHealth = 100;
+    // [SerializeField] private Animator _animator;
+    // private Vector2 _movement;
+    // private Transform playerTransform;
+    // private Vector3 mousePostion;
+    // private Vector3 ObjPosition;
+    // private float angle;
+    // private Rigidbody2D rbody;
+    // public GameObject ball;
+    private int _health = 100;
     private bool is_dead = false;
 
     void Awake()
     {
         // rbody = GetComponent<Rigidbody2D>();
         // playerTransform = this.transform;
-        // this.pSpeed = 5f;
+        // this._speed = 5f;
     }
 
     // Start is called before the first frame update
@@ -49,11 +36,11 @@ public class Player : MonoBehaviour
     void Update()
     {
         // PlayerAim();
-        ProcessInputs();
-        this._animator.SetFloat("Horizontal", this.pMovement.x);
-        this._animator.SetFloat("Vertical", this.pMovement.y);
+        // ProcessInputs();
+        // this._animator.SetFloat("Horizontal", this._movement.x);
+        // this._animator.SetFloat("Vertical", this._movement.y);
 
-        this._animator.SetFloat("Speed", this.pMovement.sqrMagnitude);
+        // this._animator.SetFloat("Speed", this._movement.sqrMagnitude);
     }
 
     private void FixedUpdate()
@@ -61,13 +48,13 @@ public class Player : MonoBehaviour
         // Move();
     }
 
-    private void ProcessInputs()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+    // private void ProcessInputs()
+    // {
+    //     float moveX = Input.GetAxisRaw("Horizontal");
+    //     float moveY = Input.GetAxisRaw("Vertical");
 
-        pMovement = new Vector2(moveX, moveY).normalized; // TODO: come back to this
-    }
+    //     pMovement = new Vector2(moveX, moveY).normalized; // TODO: come back to this
+    // }
 
     // /// <summary>
     // /// Method to handle the player movement
@@ -78,31 +65,13 @@ public class Player : MonoBehaviour
     //     // yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
 
     //     // Vector2 dVector = new Vector2(xInput, yInput); // set new direction parameters
-    //     rbody.velocity = new Vector2(pMovement.x * pSpeed, pMovement.y * pSpeed); // apply new direction and velocity
+    //     rbody.velocity = new Vector2(pMovement.x * _speed, pMovement.y * _speed); // apply new direction and velocity
     // }
-
-    public Vector2 CalculateMovement(float h, float v, float deltaTime)
-    {
-        var x = h * pSpeed * deltaTime;
-        var y = v * pSpeed * deltaTime;
-
-        return new Vector2(x, y);
-    }
-
-    private void PlayerDodge()
-    {
-        // TODO: implement dodging an incoming ball
-    }
-
-    private void PlayerPickUpBall()
-    {
-        // TODO: Implement picking up new ball
-    }
 
     public void TakeDamage(int dmgAmt)
     {
-        this.pHealth -= dmgAmt;
-        if (this.pHealth <= 0)
+        this._health -= dmgAmt;
+        if (this._health <= 0)
         {
             this.is_dead = true;
         }
@@ -110,22 +79,22 @@ public class Player : MonoBehaviour
 
     public void setSpeed(float newSpeed)
     {
-        this.pSpeed = newSpeed;
+        this._speed = newSpeed;
     }
 
     public float getSpeed()
     {
-        return this.pSpeed;
+        return this._speed;
     }
 
     public void setHealth(int newHealth)
     {
-        this.pHealth = newHealth;
+        this._health = newHealth;
     }
 
     public int getHealth()
     {
-        return this.pHealth;
+        return this._health;
     }
 
     public bool isDead()
