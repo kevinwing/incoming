@@ -8,6 +8,10 @@ public class FollowCamera : MonoBehaviour
 
     private void Awake()
     {
+    }
+
+    private void Start()
+    {
         playerTransform = GameObject.Find("Player").transform;
     }
 

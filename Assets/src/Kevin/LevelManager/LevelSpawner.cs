@@ -1,38 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
+// using System.Collections;
+// using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
+// using UnityEngine.Pool;
 
-public class LevelSpawner : MonoBehaviour
+public class LevelSpawner : LevelSpawnerBase
 {
-    // private ObjectPool<GameObject> enemyPool;
-
-    private GameObject[] spawnPoints;
-    // [SerializeField] private EnemyPool enemyPool;
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private GameObject bossPrefab;
-    [SerializeField] private GameObject ballPrefab;
-
-    private int spawnPerPoint = 1; // number of enemies to spawn at each spawn point at start
-    private int numEnemies; // spawnPerPoint * number of spawn points
-    private int numWaves;
-
-    // Enemy prefabs
-    [SerializeField] private GameObject enemyPrefab1;
-    // [SerializeField] private GameObject enemyPrefab2;
-    // [SerializeField] private GameObject enemyPrefab3;
+    private string spawnTag = "spawn_point";
 
     private void Awake()
     {
-        spawnPoints = GameObject.FindGameObjectsWithTag("spawn_point"); // get array of spawn points
-        numEnemies = spawnPerPoint * spawnPoints.Length;
-        numWaves = 5;
+        Instantiate(playerPrefab, new Vector3(0,0,0), new Quaternion());
     }
 
     private void Start()
     {
-
+        spawnPoints = GetSpawnPoints(spawnTag);
+        numEnemies = spawnPerPoint * spawnPoints.Length;
+        SpawnWave();
     }
 
-    
+    /// <summary>
+    /// Calculates wave based on number of points and spawns per point
+    /// </summary>
+    /// <returns>integer</returns>
+    protected override int CalculateWave()
+    {
+        return spawnPoints.Length * spawnPerPoint;
+    }
+
+
 }
