@@ -20,12 +20,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rbody;
     public GameObject ball;
 
-    public event EventHandler OnShoot;
-    public class OnShootEventArgs : EventArgs
-    {
-        public Vector3 playerPosition;
-        public Vector3 shootPosition;
-    }
+    // public event EventHandler OnShoot;
+    // public class OnShootEventArgs : EventArgs
+    // {
+    //     public Vector3 playerPosition;
+    //     public Vector3 shootPosition;
+    // }
     // private Camera mainCamera;
     // private float xInput = 0f;
     // private float yInput = 0f;
@@ -34,9 +34,9 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        rbody = GetComponent<Rigidbody2D>();
-        playerTransform = this.transform;
-        this.pSpeed = 5f;
+        // rbody = GetComponent<Rigidbody2D>();
+        // playerTransform = this.transform;
+        // this.pSpeed = 5f;
     }
 
     // Start is called before the first frame update
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        // Move();
     }
 
     private void ProcessInputs()
@@ -69,17 +69,17 @@ public class Player : MonoBehaviour
         pMovement = new Vector2(moveX, moveY).normalized; // TODO: come back to this
     }
 
-    /// <summary>
-    /// Method to handle the player movement
-    /// </summary>
-    private void Move()
-    {
-        // xInput = Input.GetAxisRaw("Horizontal"); // get horizontal(x) input
-        // yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
+    // /// <summary>
+    // /// Method to handle the player movement
+    // /// </summary>
+    // private void Move()
+    // {
+    //     // xInput = Input.GetAxisRaw("Horizontal"); // get horizontal(x) input
+    //     // yInput = Input.GetAxisRaw("Vertical"); // get vertical(y) input
 
-        // Vector2 dVector = new Vector2(xInput, yInput); // set new direction parameters
-        rbody.velocity = new Vector2(pMovement.x * pSpeed, pMovement.y * pSpeed); // apply new direction and velocity
-    }
+    //     // Vector2 dVector = new Vector2(xInput, yInput); // set new direction parameters
+    //     rbody.velocity = new Vector2(pMovement.x * pSpeed, pMovement.y * pSpeed); // apply new direction and velocity
+    // }
 
     public Vector2 CalculateMovement(float h, float v, float deltaTime)
     {
@@ -88,46 +88,6 @@ public class Player : MonoBehaviour
 
         return new Vector2(x, y);
     }
-
-    /// <summary>
-    /// Method to handle the direction the player is aiming
-    /// </summary>
-    // private void PlayerAim()
-    // {
-    //     mousePostion = Input.mousePosition;
-    //     mousePostion.z = 5.23f;
-
-    //     ObjPosition = Camera.main.WorldToScreenPoint(playerTransform.position);
-
-    //     mousePostion.x = mousePostion.x - ObjPosition.x;
-    //     mousePostion.y = mousePostion.y - ObjPosition.y;
-
-    //     angle = Mathf.Atan2(mousePostion.y, mousePostion.x) * Mathf.Rad2Deg;
-
-    //     transform.rotation = Quaternion.Euler(new Vector3(0,0, angle));
-    // }
-
-    // private void PlayerShoot()
-    // {
-    //     // TODO: implement shooting the ball
-    //     mousePostion = Input.mousePosition;
-    //     mousePostion.z = 5.23f;
-
-    //     ObjPosition = Camera.main.WorldToScreenPoint(playerTransform.position);
-
-    //     mousePostion.x = mousePostion.x - ObjPosition.x;
-    //     mousePostion.y = mousePostion.y - ObjPosition.y;
-
-    //     angle = Mathf.Atan2(mousePostion.y, mousePostion.x) * Mathf.Rad2Deg;
-    //     // Instantiate(ball, this.transform.position, Quaternion.identity);
-    //     if (Input.GetMouseButtonDown(0))
-    //     {
-    //         OnShoot?.Invoke(this, new OnShootEventArgs {
-
-    //         });
-    //     }
-    // }
-
 
     private void PlayerDodge()
     {
