@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/*
+*       Base class for pickups.  
+*       
+*       TriggerBonus is overridden for dynamic binding.
+*
+*
+*/
+
+
 public class Pickup : MonoBehaviour
 {
     public PlayerHealth phealth;
@@ -12,7 +21,7 @@ public class Pickup : MonoBehaviour
     void Awake(){
 
         phealth = FindObjectOfType<PlayerHealth>();
-        
+
 
     }
 
@@ -29,6 +38,7 @@ public class Pickup : MonoBehaviour
 
         if(phealth.currentHealth < 100){
                 phealth.AddHealth(healthBoost);
+                FindObjectOfType<AudioManager>().Play("Pickup");
                 Destroy(gameObject);
         }
     }

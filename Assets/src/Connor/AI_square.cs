@@ -129,7 +129,6 @@ public class AI_square : AI
         if (collision.gameObject.CompareTag("ball_p"))
         {
             DoDamage(100);
-            Debug.Log("HIT");
         }
     }
 

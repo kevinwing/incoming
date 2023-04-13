@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 
 
 /*
-8
+*   
+*   Includes state pattern
+*   
 *   TO CHANGE GAMESTATE ADD
 *    public GameManager GameManager;
-8
-8
+*
+*
 *   THEN CALL
 *        GameManager.SetGameState(GameState.nameofthestateyouwanttoset);
 *
@@ -76,16 +78,19 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Title");
                 break;
             case GameState.Paused:
-                //FindObjectOfType<AudioManager>().Play("Title");
+                FindObjectOfType<AudioManager>().SetLowPassDirect(120);
                 // NEED TO CALL METHOD TO DISABLE PLAYER ?
                 break;
-            case GameState.Wave:
+            case GameState.Wave: 
                 FindObjectOfType<AudioManager>().Play("Action");
+                FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1 );
                 break;
             case GameState.Transition:
+                // Will Be used inbetween waves or levels
                 break;
             case GameState.Boss:
+
                 break;
             case GameState.Victory:
                 break;

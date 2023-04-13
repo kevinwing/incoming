@@ -121,4 +121,20 @@ public class AudioManager : MonoBehaviour
         return frequency;
     }
 
+    public void SetLowPassDirect(float frequency){
+        
+   
+        
+        if(frequency > 22000){ //Max freq thresh
+            frequency = 22000;
+        }
+        if(frequency < 120){ //Min freq thresh
+            frequency = 120;
+        }
+
+        masterMixer.SetFloat("lowPassFreq", frequency); 
+        
+
+    }
+
 }

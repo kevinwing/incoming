@@ -9,7 +9,7 @@ public sealed class AI_boss : AI
 
     static AI_boss() {}
 
-    private AI_boss() {}
+    private AI_boss() {} // call the base constructor with a value for health
 
     public static AI_boss Instance
     {
