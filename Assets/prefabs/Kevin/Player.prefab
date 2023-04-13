@@ -244,7 +244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0
-  ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
 --- !u!114 &2247323794502030131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,8 +324,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab36bedeed0b04a0d8a10f88580e1eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthbar: {fileID: 0}
-  audioManager: {fileID: 0}
+  healthbar: {fileID: 7754258635738879069, guid: 3ff2cf7f0907b46f99f974366d512861, type: 3}
+  audioManager: {fileID: 8419152778502257936, guid: 043edc91f5b20451a9235d04f381b7c1, type: 3}
   currentHealth: 0
 --- !u!95 &4803637595013320521
 Animator:
