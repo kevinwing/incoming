@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         if(  sceneName == "Main Menu"){
             SetGameState(GameState.Menu);
         }
-        if( sceneName == "Game"){
+        if( sceneName == "lvl1"){
             SetGameState(GameState.Wave);
         }
 
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     
 
-
+/*
     public void newEnemy()
     {
         if (numberEnemies > 0)
@@ -115,6 +115,8 @@ public class GameManager : MonoBehaviour
             --numberEnemies;
         }
     }
+
+    */
 }
 
 

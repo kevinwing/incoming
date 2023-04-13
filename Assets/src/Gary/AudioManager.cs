@@ -58,7 +58,7 @@ public class AudioManager : MonoBehaviour
         if(  sceneName == "Main Menu"){
             Play("Title");
         }
-        if( sceneName == "Game"){
+        if( sceneName == "lvl1"){
             Play("Action");
             
         }
