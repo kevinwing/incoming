@@ -8,7 +8,7 @@ public class DataTest
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void DataStructTest()
+    public void DataClassTest()
     {
         //Arrange
         var expected = 10;

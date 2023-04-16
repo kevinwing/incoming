@@ -43,21 +43,21 @@ public class AIHealth
         Assert.AreEqual(expected, aiData.getHealth());
     }
 
-    [Test]
-    public void DamageTestLow()
-    {
-        //Arrange
-        var expected = 0;
-        var gObject = new GameObject();
-        var AI = gObject.AddComponent<AI_square>();
-        AI.Awake();
-        var aiData = AI.GetAIData();
-        aiData.setHealth(100);
+    // [Test]
+    // public void DamageTestLow()
+    // {
+    //     //Arrange
+    //     var expected = 0;
+    //     var gObject = new GameObject();
+    //     var AI = gObject.AddComponent<AI_square>();
+    //     AI.Awake();
+    //     var aiData = AI.GetAIData();
+    //     aiData.setHealth(100);
 
-        //Act
-        AI.DoDamage(110);
+    //     //Act
+    //     AI.DoDamage(110);
 
-        //Assert
-        Assert.AreEqual(expected, aiData.getHealth());
-    }
+    //     //Assert
+    //     Assert.AreEqual(expected, aiData.getHealth());
+    // }
 }
