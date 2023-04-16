@@ -53,9 +53,10 @@ public class AI : MonoBehaviour
 
     /* ---FUNCTIONS--- */
 
-    void Awake()
+    public void Awake()
     {
         aiData = new AI_data(100.0f, this);
+        Debug.Log(GetAIData().getHealth());
     }
 
     //find new index
@@ -121,6 +122,11 @@ public class AI : MonoBehaviour
         GameObject spawn = GameObject.FindWithTag("spawner");
         Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    public AI_data GetAIData()
+    {
+        return aiData;
     }
 
     public class AI_data

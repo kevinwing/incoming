@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class AI_square : AI
 {
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         //establish navigation
         agent = GetComponent<NavMeshAgent>();
