@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 6547798847543896585}
   - component: {fileID: 963008769654313713}
   - component: {fileID: 7442564795016792540}
+  - component: {fileID: -8524001250382433437}
   m_Layer: 6
-  m_Name: AI
+  m_Name: AI_boss
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +106,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   coverPoint: {fileID: 741263977278215262, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
   AI_inst: {fileID: 0}
-  health: 100
+  health: 1
   coll: {fileID: 963008769654313713}
   ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
   hasBall: 0
@@ -190,3 +191,25 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &-8524001250382433437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6547798847543896583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f65c1fcdd930cc498af9025052f7cc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  manager: {fileID: 0}
+  coverPoint: {fileID: 0}
+  AI_inst: {fileID: 0}
+  health: 100
+  coll: {fileID: 0}
+  ball: {fileID: 0}
+  hasBall: 0
+  _animator: {fileID: 0}
+  rb: {fileID: 0}
