@@ -56,7 +56,6 @@ public class AI : MonoBehaviour
     public void Awake()
     {
         aiData = new AI_data(100.0f, this);
-        Debug.Log(GetAIData().getHealth());
     }
 
     //find new index

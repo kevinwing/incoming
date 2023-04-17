@@ -17,7 +17,7 @@ public class ball : MonoBehaviour
     private Vector2 direction;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         //direction of target
         setTarget(target);
