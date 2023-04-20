@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 0
   numberEnemies: 5
+  pausemenu: {fileID: 8763649084048903344, guid: 3a7b3998ef4c04a59acb77f494ff31f5, type: 3}

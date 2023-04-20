@@ -2,7 +2,9 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
 
 
 /*
@@ -30,11 +32,15 @@ public class GameManager : MonoBehaviour
 {
 
     public static GameManager Instance;
+    //public GameObject pauseMenuUI;
+    //public GameObject pauseButton;
     public static event Action<GameState>  GameStateChanged;
     Scene m_scene;
     string sceneName;
     public GameState State;
     public int numberEnemies = 5;
+    public static bool isPaused;
+    public pauseMenu pausemenu;
 
     void Awake(){
         //make singleton -- Make sure this persists through scenes and that there are not multiple instances.
@@ -45,6 +51,8 @@ public class GameManager : MonoBehaviour
         else{
             Destroy(gameObject);
         }
+
+        isPaused = false;
         
 
     
@@ -62,10 +70,9 @@ public class GameManager : MonoBehaviour
             SetGameState(GameState.Wave);
         }
 
+        //pausemenu = FindObjectOfType<pauseMenu>();
         
     }
-
-
 
 
 
@@ -78,13 +85,12 @@ public class GameManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("Title");
                 break;
             case GameState.Paused:
-                FindObjectOfType<AudioManager>().SetLowPassDirect(120);
-                // NEED TO CALL METHOD TO DISABLE PLAYER ?
+                Pause();
                 break;
             case GameState.Wave: 
-                FindObjectOfType<AudioManager>().Play("Action");
-                FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1 );
+                Wave();
+
+                
                 break;
             case GameState.Transition:
                 // Will Be used inbetween waves or levels
@@ -103,7 +109,48 @@ public class GameManager : MonoBehaviour
         GameStateChanged?.Invoke(newState);  // ? means invoke if anyone is subscribed to event
     }
 
+    private void Pause(){
+
+        if( isPaused == false){
+            FindObjectOfType<AudioManager>().SetLowPassDirect(120);
+            pausemenu.Pause();
+            
+            Time.timeScale = 0f;
+            Debug.Log("GameManager gamestate pause");
+            isPaused = true;
+        }
+        else{
+            pausemenu.UnPause();
+
+            Time.timeScale = 1;
+            FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
+            isPaused = false;
+
+        }
+                        
+                // NEED TO CALL METHOD TO DISABLE PLAYER ?
     
+    } 
+
+    private void Wave(){
+        Debug.Log("GameManager gamestate wave");
+
+        FindObjectOfType<AudioManager>().Play("Action");
+        //pauseMenuUI.SetActive(false);
+
+
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1 );
+
+
+
+        m_scene = SceneManager.GetActiveScene();
+        sceneName = m_scene.name;
+        if( sceneName != "lvl1"){
+            SceneManager.LoadScene("lvl1");
+        }
+
+
+    }
 
 /*
     public void newEnemy()
@@ -117,7 +164,17 @@ public class GameManager : MonoBehaviour
     }
 
     */
+
+     void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)){
+            Debug.Log("Pause Button Pressed");
+            SetGameState(GameState.Paused);
+        }
+    }
 }
+
+
 
 
 public enum GameState {

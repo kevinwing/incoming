@@ -15,6 +15,7 @@ TagManager:
   - spawn_point
   - boss_spawn_point
   - player_spawn
+  - pausemenu
   layers:
   - Default
   - TransparentFX
