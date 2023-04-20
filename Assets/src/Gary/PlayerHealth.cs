@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour
     private float maxHealth = 100;
     public HealthBar healthbar;
     public AudioManager audioManager;
+    public GameManager GameManager;
+    //private bool isDead;
     //private bool regenerating = false;
     
 
@@ -21,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         rBody = GetComponent<Rigidbody2D>();
         SetHealth(maxHealth);
         InvokeRepeating("RegenerateHealth", .1f , .1f); //(methodname,time,repeatrate)
+        //isDead = false;
     }
 
     public void SetHealth(float health){
@@ -64,7 +67,12 @@ public class PlayerHealth : MonoBehaviour
             }
         }
         else{
+
+
             SetHealth(0);
+            //isDead = true;
+            GameManager.SetGameState(GameState.Death);
+        
         }
 
     }

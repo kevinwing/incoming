@@ -326,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 7754258635738879069, guid: 3ff2cf7f0907b46f99f974366d512861, type: 3}
   audioManager: {fileID: 8419152778502257936, guid: 043edc91f5b20451a9235d04f381b7c1, type: 3}
+  GameManager: {fileID: 3867646734052178869, guid: 70d86a1f6f38b4ea3aa2661b647e3586, type: 3}
   currentHealth: 0
 --- !u!95 &4803637595013320521
 Animator:

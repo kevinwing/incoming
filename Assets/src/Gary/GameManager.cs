@@ -30,7 +30,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-
+    //public GameObject deathTestManager;
     public static GameManager Instance;
     //public GameObject pauseMenuUI;
     //public GameObject pauseButton;
@@ -101,6 +101,9 @@ public class GameManager : MonoBehaviour
             case GameState.Victory:
                 break;
             case GameState.Death:
+                //deathTestManager.Setup();
+                Debug.Log("Death Game State");
+
                 break;
 
         }

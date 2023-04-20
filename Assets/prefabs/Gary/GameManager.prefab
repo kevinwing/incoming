@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee4084b09f89b804e96c6c083d270480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathScreen: {fileID: 1694408388342940527, guid: 80c8daa5d0d1f476c98491efc04bc8a8, type: 3}
   State: 0
   numberEnemies: 5
   pausemenu: {fileID: 8763649084048903344, guid: 3a7b3998ef4c04a59acb77f494ff31f5, type: 3}
