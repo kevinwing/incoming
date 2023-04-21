@@ -1,0 +1,28 @@
+# README
+
+
+Unity AudioManager Prefab
+
+Overview:
+
+The AudioManager prefab is a tool to help manage and organize the playback of audioclips
+in Unity.  It is a singleton, which makes it persist throughout scene changes.  
+
+The AudioManager arranges clips in public array of the class Sound.cs.  This allows for parameters
+such as volume, loop, th audio mixer group, and the name to all be accessed and adjusted in a single pane
+of the inspector window when the AudioManager prefab is selected.
+
+
+
+Operation:
+
+To add a clip to the AudioManager:
+-select the AudioManager in the project. 
+-add 1 to the "sounds" array
+-drag the audio file into the specified audioclip
+-adjust parameters as needed
+-call the AudioManager.Play("clipname") on that clip.
+
+When the AudioMixer is instantiated, inside the Awake() function there is a loop that will
+add an audiosource for each sound in the Sound[] array.  Each Sound[] element will also have the
+paramaters loop, volume, clip, and audioMixerGroup added to the its specific audiosource as well.
