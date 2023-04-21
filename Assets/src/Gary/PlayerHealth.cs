@@ -71,7 +71,7 @@ public class PlayerHealth : MonoBehaviour
 
             SetHealth(0);
             //isDead = true;
-            GameManager.SetGameState(GameState.Death);
+            FindObjectOfType<GameManager>().SetGameState(GameState.Death);
         
         }
 

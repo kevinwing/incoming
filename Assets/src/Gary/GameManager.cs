@@ -101,7 +101,8 @@ public class GameManager : MonoBehaviour
             case GameState.Victory:
                 break;
             case GameState.Death:
-                //deathTestManager.Setup();
+                // Trigger new scene
+                SceneManager.LoadScene("Death");
                 Debug.Log("Death Game State");
 
                 break;
