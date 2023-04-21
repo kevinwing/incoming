@@ -44,6 +44,9 @@ binding for method calls. Dynamic binding is commonly used in scenarios where th
 is not known until runtime, such as with plugin architectures or when working with external APIs.
 */
 
+/// <summary>
+/// Player class that holds all player data and methods to manipulate player data
+/// </summary>
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed;

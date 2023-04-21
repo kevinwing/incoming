@@ -3,66 +3,44 @@ using System.Collections.Generic;
 using UnityEngine;
 // using Utils;
 
+/// <summary>
+/// Handles the aiming of the player
+/// </summary>
 public class PlayerAim : MonoBehaviour
 {
-    private Transform aimTransform;
-    // private Transform ballTransform;
-    // [SerializeField] private GameObject Ball;
-    // private Vector3 ballPosition;
+    private Transform aimTransform; // reference to the aim transform
 
-    [SerializeField] private PlayerPickupBall playerPickupBall;
+    [SerializeField] private PlayerPickupBall playerPickupBall; // reference to the player pickup ball script
 
+    /// <summary>
+    /// Awake is called when the script instance is being loaded.
+    /// </summary>
     private void Awake()
     {
-        aimTransform = transform.Find("Aim");
-        // ballTransform = aimTransform.Find("Ball");
+        aimTransform = transform.Find("Aim"); // find the aim transform
     }
 
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
     private void Update()
     {
-        HandleAiming();
+        HandleAiming(); // handle aiming
     }
 
+    /// <summary>
+    /// Handles the aiming of the player by rotating the aim
+    /// transform to face the mouse position in world space
+    /// </summary>
     private void HandleAiming()
     {
-        Vector3 mousePosition = Utils.GetMouseWorldPosition();
+        Vector3 mousePosition = Utils.GetMouseWorldPosition(); // get the mouse position in world space
 
+        // get the direction from the player to the mouse position
         Vector3 aimDirection = (mousePosition - transform.position).normalized;
+        // get the angle from the player to the mouse position
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        // rotate the aim transform to face the mouse position
         aimTransform.eulerAngles = new Vector3(0, 0, angle);
     }
-
-    // private void HandleShooting()
-    // {
-    //     if (Input.GetMouseButtonDown(0))
-    //     {
-    //         // Vector3 mousePostition = GetMouseWorldPosition();
-    //         ballPosition = ballTransform.position;
-
-    //         Instantiate(Ball, ballPosition, Quaternion.identity);
-    //     }
-    // }
-
-    // private static Vector3 GetMouseWorldPosition()
-    // {
-    //     Vector3 vec = GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
-    //     vec.z = 0f;
-    //     return vec;
-    // }
-
-    // private static Vector3 GetMouseWorldPositionWithZ()
-    // {
-    //     return GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
-    // }
-
-    // private static Vector3 GetMouseWorldPositionWithZ(Camera worldCamera)
-    // {
-    //     return GetMouseWorldPositionWithZ(Input.mousePosition, worldCamera);
-    // }
-
-    // private static Vector3 GetMouseWorldPositionWithZ(Vector3 screenPostion, Camera worldCamera)
-    // {
-    //     Vector3 worldPosition = worldCamera.ScreenToWorldPoint(screenPostion);
-    //     return worldPosition;
-    // }
 }
