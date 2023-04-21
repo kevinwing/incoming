@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6517870832015005147}
+  - component: {fileID: 8747305673841883328}
   m_Layer: 0
-  m_Name: EnemySpawn3
+  m_Name: Spawner
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +32,21 @@ Transform:
   m_Father: {fileID: 6517870832358406085}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8747305673841883328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870832015005148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
+  numEnemiesPerWave: 10
+  spawnDelay: 1
 --- !u!1 &6517870832358406087
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,8 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6517870832358406085}
-  - component: {fileID: 6517870832358406086}
-  - component: {fileID: 6668181724261165784}
+  - component: {fileID: 3744752647938855652}
   m_Layer: 0
   m_Name: LevelSpawner
   m_TagString: spawner
@@ -70,7 +85,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6517870832358406086
+--- !u!114 &3744752647938855652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -79,27 +94,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6517870832358406087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: facfe5070b7ac88489d800b45c81aab3, type: 3}
+  m_Script: {fileID: 11500000, guid: c2d71cf233011364489e4780ce00da41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 2206603567970864959, guid: 1376c6385cecce44cb3b1ac3e882bb5c, type: 3}
-  bossPrefab: {fileID: 0}
-  ballPrefab: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
-  enemyPrefab1: {fileID: 0}
---- !u!114 &6668181724261165784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6517870832358406087}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60bb00a7178396a4a9733c7b734d69da, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
-  poolSize: 0
+  enemySpawners: []
+  bossSpawner: {fileID: 0}
+  numWaves: 5
+  numEnemiesPerWave: 1
+  numBossesPerWave: 1
 --- !u!1 &6517870832720459011
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,8 +111,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6517870832720459010}
+  - component: {fileID: 8879556731678425741}
   m_Layer: 0
-  m_Name: EnemySpawn4
+  m_Name: Spawner
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +134,21 @@ Transform:
   m_Father: {fileID: 6517870832358406085}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8879556731678425741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870832720459011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
+  numEnemiesPerWave: 10
+  spawnDelay: 1
 --- !u!1 &6517870832900220392
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +158,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6517870832900220391}
+  - component: {fileID: 7946316805424317624}
   m_Layer: 0
-  m_Name: BossSpawn
+  m_Name: BossSpawner
   m_TagString: boss_spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,6 +181,24 @@ Transform:
   m_Father: {fileID: 6517870832358406085}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7946316805424317624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870832900220392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: facfe5070b7ac88489d800b45c81aab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
+  numEnemiesPerWave: 10
+  spawnDelay: 1
+  bossPrefab: {fileID: 0}
+  numBossesPerWave: 1
+  bossSpawnDelay: 3
 --- !u!1 &6517870833224505768
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,7 +223,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517870833224505768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.92, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -202,8 +239,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6517870833729789348}
+  - component: {fileID: 582812938504137939}
   m_Layer: 0
-  m_Name: EnemySpawn2
+  m_Name: Spawner
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,6 +262,21 @@ Transform:
   m_Father: {fileID: 6517870832358406085}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &582812938504137939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870833729789349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
+  numEnemiesPerWave: 10
+  spawnDelay: 1
 --- !u!1 &6517870833810101538
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,8 +286,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6517870833810101537}
+  - component: {fileID: 1476879851755971341}
   m_Layer: 0
-  m_Name: EnemySpawn1
+  m_Name: Spawner
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,3 +309,18 @@ Transform:
   m_Father: {fileID: 6517870832358406085}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1476879851755971341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870833810101538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
+  numEnemiesPerWave: 10
+  spawnDelay: 1

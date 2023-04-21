@@ -4,24 +4,16 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    [SerializeField] private Transform playerTransform; // reference for the Player transform
+    public GameObject player; // reference to the Player
 
-    private void Awake()
+    private void Start()
     {
-        playerTransform = GameObject.Find("Player").transform;
+        this.player = GameObject.Find("Player");
     }
 
-    // private void Start()
-    // {
-    //     player = GameObject.Find("Player");
-    // }
-
-    // Called when physics events occur
-    // private void Update()
     private void FixedUpdate()
     {
         // change position of the camera relative to the position of the Player
-        // transform.position = player.transform.position + new Vector3(0, 1, -10);
-        transform.position = new Vector3(playerTransform.position.x, playerTransform.position.y, transform.position.z);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, this.transform.position.z);
     }
 }

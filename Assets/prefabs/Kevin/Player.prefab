@@ -126,13 +126,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2206603567970864962}
   - component: {fileID: 2764098570913679510}
+  - component: {fileID: 8413533989092878839}
   - component: {fileID: 6957887876761329319}
   - component: {fileID: 1668923996101092035}
   - component: {fileID: 2247323794502030131}
   - component: {fileID: 8491110919244288173}
   - component: {fileID: 5640577677731259563}
   - component: {fileID: -5693839806160581}
-  - component: {fileID: 8413533989092878839}
   - component: {fileID: -8380662868019774750}
   - component: {fileID: 4803637595013320521}
   m_Layer: 7
@@ -210,6 +210,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &8413533989092878839
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206603567970864959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.25, y: 0.5}
+  m_Direction: 0
 --- !u!50 &6957887876761329319
 Rigidbody2D:
   serializedVersion: 4
@@ -296,22 +312,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ball: {fileID: 3284034116535098509, guid: 7265902be0534774c8eef75cb0bed889, type: 3}
   playerPickupBall: {fileID: 0}
---- !u!70 &8413533989092878839
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2206603567970864959}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.25, y: 0.5}
-  m_Direction: 0
 --- !u!114 &-8380662868019774750
 MonoBehaviour:
   m_ObjectHideFlags: 0
