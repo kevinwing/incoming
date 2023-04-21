@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
                 // Trigger new scene
                 SceneManager.LoadScene("Death");
                 Debug.Log("Death Game State");
+                FindObjectOfType<AudioManager>().Play("Death");
 
                 break;
 
@@ -137,6 +138,7 @@ public class GameManager : MonoBehaviour
     } 
 
     private void Wave(){
+        FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
         Debug.Log("GameManager gamestate wave");
 
         FindObjectOfType<AudioManager>().Play("Action");
