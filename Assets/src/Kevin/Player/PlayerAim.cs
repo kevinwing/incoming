@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class PlayerAim : MonoBehaviour
 {
-    private Transform aimTransform; // reference to the aim transform
+    public Transform aimTransform; // reference to the aim transform
 
     [SerializeField] private PlayerPickupBall playerPickupBall; // reference to the player pickup ball script
 
@@ -25,16 +25,16 @@ public class PlayerAim : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        HandleAiming(); // handle aiming
+        Aim(Utils.GetMouseWorldPosition()); // handle aiming
     }
 
     /// <summary>
     /// Handles the aiming of the player by rotating the aim
     /// transform to face the mouse position in world space
     /// </summary>
-    private void HandleAiming()
+    public void Aim(Vector3 mousePos)
     {
-        Vector3 mousePosition = Utils.GetMouseWorldPosition(); // get the mouse position in world space
+        Vector3 mousePosition = mousePos; // get the mouse position in world space
 
         // get the direction from the player to the mouse position
         Vector3 aimDirection = (mousePosition - transform.position).normalized;

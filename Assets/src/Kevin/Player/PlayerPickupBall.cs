@@ -27,7 +27,7 @@ public class PlayerPickupBall : MonoBehaviour
     /// Set the flag to true if the player has the ball
     /// </summary>
     /// <param name="hasBall">bool hasBall</param>
-    public void Set(bool hasBall)
+    public void SetHasBall(bool hasBall)
     {
         this.hasBall = hasBall; // set the flag to true
     }
@@ -36,7 +36,7 @@ public class PlayerPickupBall : MonoBehaviour
     /// Get the flag to true if the player has the ball
     /// </summary>
     /// <returns>bool hasBall</returns>
-    public bool Get()
+    public bool HasBall()
     {
         return hasBall;
     }

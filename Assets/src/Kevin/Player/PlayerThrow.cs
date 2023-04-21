@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerThrow : MonoBehaviour
 {
-    private Transform aimTransform;
-    private Transform ballTransform;
-    [SerializeField] private GameObject ball;
+    public Transform aimTransform;
+    public Transform ballTransform;
+    public GameObject ball;
     // private Vector3 ballPosition;
 
     [SerializeField] private PlayerPickupBall playerPickupBall;
@@ -27,7 +27,7 @@ public class PlayerThrow : MonoBehaviour
         HandleShooting();
     }
 
-    private void HandleShooting()
+    public void HandleShooting()
     {
         if (Input.GetMouseButtonDown(0))
         {

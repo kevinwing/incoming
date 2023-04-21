@@ -7,10 +7,10 @@ using UnityEngine;
 /// </summary>
 public class PlayerMove : MonoBehaviour
 {
-    private float _speed = 5f; // speed of the player
-    private Rigidbody2D _rigidbody; // reference to the rigidbody component of the player object
-    private Vector2 _movement; // direction of the player movement
-    private Transform _transform; // reference to the transform component of the player object
+    public float _speed = 5f; // speed of the player
+    public Rigidbody2D _rigidbody; // reference to the rigidbody component of the player object
+    public Vector2 _movement; // direction of the player movement
+    public Transform _transform; // reference to the transform component of the player object
     [SerializeField] Animator _animator; // reference to the animator component of the player object
 
     /// <summary>
@@ -38,7 +38,7 @@ public class PlayerMove : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        Move(); // move the player object
+        Move(this._speed); // move the player object
         Animate(); // animate the player object based on the movement direction
     }
 
@@ -57,10 +57,10 @@ public class PlayerMove : MonoBehaviour
     /// Move the player object by applying forces to the rigidbody
     /// component of the player object based on the movement direction and speed of the player object
     /// </summary>
-    private void Move()
+    public void Move(float speed)
     {
         // apply forces to the rigidbody component of the player object based on the movement direction and speed of the player object
-        this._rigidbody.velocity = new Vector2(this._movement.x * this._speed, this._movement.y * this._speed);
+        this._rigidbody.velocity = new Vector2(this._movement.x * speed, this._movement.y * speed);
     }
 
     /// <summary>
