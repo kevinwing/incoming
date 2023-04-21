@@ -102,9 +102,11 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Death:
                 // Trigger new scene
-                SceneManager.LoadScene("Death");
-                Debug.Log("Death Game State");
-                FindObjectOfType<AudioManager>().Play("Death");
+                Time.timeScale = .1f;
+                Invoke("Death", .1f);
+
+
+
 
                 break;
 
@@ -134,6 +136,15 @@ public class GameManager : MonoBehaviour
         }
                         
                 // NEED TO CALL METHOD TO DISABLE PLAYER ?
+    
+    } 
+    private void Death(){
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Death");
+        Debug.Log("Death Game State");
+        FindObjectOfType<AudioManager>().Play("Death");
+        FindObjectOfType<AudioManager>().Play("Fall");
+        FindObjectOfType<AudioManager>().Play("Birds");
     
     } 
 
