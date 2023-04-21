@@ -13,6 +13,9 @@ public class PlayerMove : MonoBehaviour
     public Transform _transform; // reference to the transform component of the player object
     [SerializeField] Animator _animator; // reference to the animator component of the player object
 
+    public float moveX;
+    public float moveY;
+
     /// <summary>
     /// Awake is called when the script instance is being loaded.
     /// This is where we get references to the components of the player object
@@ -38,7 +41,7 @@ public class PlayerMove : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        Move(this._speed); // move the player object
+        Move(); // move the player object
         Animate(); // animate the player object based on the movement direction
     }
 
@@ -47,8 +50,8 @@ public class PlayerMove : MonoBehaviour
     /// </summary>
     private void ProcessInputs()
     {
-        float moveX = Input.GetAxisRaw("Horizontal"); // get the horizontal input axis value (left/right)
-        float moveY = Input.GetAxisRaw("Vertical"); // get the vertical input axis value (up/down)
+        moveX = Input.GetAxisRaw("Horizontal"); // get the horizontal input axis value (left/right)
+        moveY = Input.GetAxisRaw("Vertical"); // get the vertical input axis value (up/down)
 
         this._movement = new Vector2(moveX, moveY).normalized; // set the movement direction of the player object based on the input axis values (normalized to 1)
     }
@@ -57,10 +60,10 @@ public class PlayerMove : MonoBehaviour
     /// Move the player object by applying forces to the rigidbody
     /// component of the player object based on the movement direction and speed of the player object
     /// </summary>
-    public void Move(float speed)
+    public void Move()
     {
         // apply forces to the rigidbody component of the player object based on the movement direction and speed of the player object
-        this._rigidbody.velocity = new Vector2(this._movement.x * speed, this._movement.y * speed);
+        this._rigidbody.velocity = new Vector2(this._movement.x * this._speed, this._movement.y * this._speed);
     }
 
     /// <summary>
@@ -77,5 +80,10 @@ public class PlayerMove : MonoBehaviour
         this._animator.SetFloat("Vertical", this._movement.y);
 
         this._animator.SetFloat("Speed", this._movement.sqrMagnitude);
+    }
+
+    public void SetSpeed(float speed)
+    {
+        this._speed = speed;
     }
 }

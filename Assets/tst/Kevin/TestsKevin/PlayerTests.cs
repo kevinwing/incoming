@@ -13,9 +13,12 @@ public class PlayerTests
         var playerMove = playerObj.AddComponent<PlayerMove>();
         playerMove._rigidbody = playerObj.AddComponent<Rigidbody2D>();
         float initialXPos = playerObj.transform.position.x;
+        playerMove.SetSpeed(1f);
+        playerMove.moveX = 1f;
+        playerMove.moveY = 0f;
 
         // Act
-        playerMove.Move(2f); // Move right
+        playerMove.Move(); // Move right
         float finalXPos = playerObj.transform.position.x;
 
         // Assert
