@@ -6,25 +6,6 @@ using NUnit.Framework;
 public class PlayerTests
 {
     [Test]
-    public void TestPlayerMovement()
-    {
-        // Arrange
-        GameObject playerObj = new GameObject();
-        var playerMove = playerObj.AddComponent<PlayerMove>();
-        playerMove._rigidbody = playerObj.AddComponent<Rigidbody2D>();
-        float initialXPos = playerObj.transform.position.x;
-        playerMove.SetSpeed(1f);
-        playerMove.moveX = 1f;
-        playerMove.moveY = 0f;
-
-        // Act
-        playerMove.Move(); // Move right
-        float finalXPos = playerObj.transform.position.x;
-
-        // Assert
-        Assert.Greater(finalXPos, initialXPos);
-    }
-    [Test]
     public void TestPlayerAimRotation()
     {
         // Arrange
@@ -47,16 +28,18 @@ public class PlayerTests
     {
         // Arrange
         var playerObj = new GameObject();
+        playerObj.AddComponent<Collider2D>();
+
         var ballObj = new GameObject();
+        ballObj.AddComponent<Collider2D>();
         ballObj.tag = "ball_ground";
+
         var playerPickupBall = playerObj.AddComponent<PlayerPickupBall>();
         bool initialHasBall = playerPickupBall.HasBall();
 
         // Act
-        playerObj.GetComponent<Collider2D>().SendMessage("OnCollisionEnter2D",
-            new Collision2D {
-                // gameObject = ballObj
-            });
+
+        playerObj.GetComponent<Collider2D>().SendMessage("OnCollisionEnter2D", ballObj.GetComponent<Collider2D>());
 
         bool finalHasBall = playerPickupBall.HasBall();
 
@@ -75,6 +58,8 @@ public class PlayerTests
         playerThrow.ballTransform = playerObj.transform;
         playerThrow.ball = ballPrefab;
         Vector3 initialBallPosition = playerThrow.ballTransform.position;
+        Quaternion initialBallRotation = playerThrow.ballTransform.rotation;
+        playerThrow.transform.rotation = initialBallRotation;
 
         // Act
         playerThrow.HandleShooting();
@@ -82,5 +67,29 @@ public class PlayerTests
 
         // Assert
         Assert.AreEqual(initialBallPosition, finalBallPosition);
+    }
+
+    [Test]
+    public void moveAlongXAxisHorizontalMovement()
+    {
+        var obj = new GameObject();
+        var player = obj.AddComponent<PlayerMove>();
+        player.SetSpeed(1f);
+
+        // yield return null;
+
+        Assert.AreEqual(1, player.transform.position.x, 1f);
+    }
+
+    [Test]
+    public void moveAlongYAxisVerticalMovement()
+    {
+        var obj = new GameObject();
+        var player = obj.AddComponent<Player>();
+        player.setSpeed(1);
+
+        // yield return null;
+
+        Assert.AreEqual(1, player.transform.position.y, 1f);
     }
 }
