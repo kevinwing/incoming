@@ -31,9 +31,6 @@ public class PlayerThrow : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Vector3 mousePostition = GetMouseWorldPosition();
-            // ballPosition = ballTransform.position;
-
             Instantiate(ball, ballTransform.position, Quaternion.identity);
         }
     }
