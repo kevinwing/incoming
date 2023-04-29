@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public sealed class AI_boss : AI
 {
@@ -26,7 +27,13 @@ public sealed class AI_boss : AI
     // Update is called once per frame
     void Update()
     {
-        
+        //get direction of movement for animator
+        AIMovement = new Vector2(target.x, target.y).normalized;
+
+        //animation
+        this._animator.SetFloat("Horizontal", this.AIMovement.x);
+        this._animator.SetFloat("Vertical", this.AIMovement.y);
+        this._animator.SetFloat("Speed", this.AIMovement.sqrMagnitude);
     }
 
     //DON'T spawn new AI and kill

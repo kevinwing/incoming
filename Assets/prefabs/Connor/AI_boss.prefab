@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 6547798847543896583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.04, y: 2.64, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 2046370917, guid: 7f86f0a7e1bd6814da29aba300335157, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 1016447982, guid: 4dae19d774f6d6048ad78fbeca8d7190, type: 3}
+  m_Color: {r: 1, g: 0.9577489, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   manager: {fileID: 0}
   coverPoint: {fileID: 741263977278215262, guid: 63021cd227aaa7f4d84f0ff4063a8381, type: 3}
   AI_inst: {fileID: 0}
-  health: 1
+  health: 100
   coll: {fileID: 963008769654313713}
   ball: {fileID: 3284034116535098509, guid: ab90064a14169b04a9d92bf06fe740e5, type: 3}
   hasBall: 0
@@ -181,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 6547798847543896583}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f0cee7fb597c534bae9abce09ae76fb, type: 2}
+  m_Controller: {fileID: 9100000, guid: b5704d62a6ba753469ee766c17018b57, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -211,5 +211,5 @@ MonoBehaviour:
   coll: {fileID: 0}
   ball: {fileID: 0}
   hasBall: 0
-  _animator: {fileID: 0}
-  rb: {fileID: 0}
+  _animator: {fileID: 7442564795016792540}
+  rb: {fileID: 6547798847543896585}
