@@ -63,6 +63,7 @@ public class PlayerHealth : MonoBehaviour
                 if(currentHealth < 40){
                     FindObjectOfType<AudioManager>().PlayLowHealthAudio();
                     
+                    
                 }
             }
         }
@@ -87,7 +88,8 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth = maxHealth;
             }    
             healthbar.setHealth(currentHealth);
-            audioManager.SetLowPass(currentHealth);
+            //audioManager.SetLowPass(currentHealth);
+            FindObjectOfType<AudioManager>().SetLowPass(currentHealth);
         
         }
         else
