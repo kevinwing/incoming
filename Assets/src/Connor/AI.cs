@@ -90,6 +90,7 @@ public class AI : MonoBehaviour
         else
         {
             aiData.setHealth(0);
+            respawn();
         }
     }
 
@@ -115,8 +116,6 @@ public class AI : MonoBehaviour
     //spawn new AI and kill
     public virtual void kill()
     {
-        GameObject spawn = GameObject.FindWithTag("spawner");
-        Instantiate(gameObject, spawn.transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

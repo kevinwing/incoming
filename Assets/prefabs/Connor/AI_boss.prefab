@@ -189,3 +189,4 @@ MonoBehaviour:
   hasBall: 0
   _animator: {fileID: 7442564795016792540}
   rb: {fileID: 6547798847543896585}
+  defeat: {fileID: -1725010858, guid: 4dae19d774f6d6048ad78fbeca8d7190, type: 3}

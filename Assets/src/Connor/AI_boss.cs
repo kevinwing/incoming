@@ -11,8 +11,17 @@ public sealed class AI_boss : AI
     //flipping
     private bool flipping = false;
 
+    //ball coroutine
+    private Coroutine spawnBallCoroutine;
+
     //awareness of players location
     private GameObject player;
+
+    //dying
+    private bool dying = false;
+
+    //defeat sprite
+    public Sprite defeat;
 
     static AI_boss() {}
 
@@ -44,53 +53,79 @@ public sealed class AI_boss : AI
         coverPoint = all[index];
 
         //start throwing
-        StartCoroutine(spawnBall());
+        spawnBallCoroutine = StartCoroutine(spawnBall());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //get direction of movement for animator
-        AIMovement = new Vector2(target.x, target.y).normalized;
-
-        //animation
-        this._animator.SetFloat("Horizontal", this.AIMovement.x);
-        this._animator.SetFloat("Vertical", this.AIMovement.y);
-        this._animator.SetFloat("Speed", this.AIMovement.sqrMagnitude);
-
-        //flipping
-        if (flipping)
+        if (!dying)
         {
-            transform.Rotate (Vector3.forward * -0.5f);
-        }
+            //get direction of movement for animator
+            AIMovement = new Vector2(target.x, target.y).normalized;
 
-        //determine the target cover point location, correcting if it somehow becomes null
-        if (coverPoint == null)
-        {
-            reIndex();
-            coverPoint = all[index];
-            target = coverPoint.transform.position;
-        }
-        else
-        {
-            target = coverPoint.transform.position;
-        }
+            //animation
+            this._animator.SetFloat("Horizontal", this.AIMovement.x);
+            this._animator.SetFloat("Vertical", this.AIMovement.y);
+            this._animator.SetFloat("Speed", this.AIMovement.sqrMagnitude);
 
-        //set target
-        setPos();
+            //flipping
+            if (flipping)
+            {
+                transform.Rotate (Vector3.forward * -0.5f);
+            }
+
+            //determine the target cover point location, correcting if it somehow becomes null
+            if (coverPoint == null)
+            {
+                reIndex();
+                coverPoint = all[index];
+                target = coverPoint.transform.position;
+            }
+            else
+            {
+                target = coverPoint.transform.position;
+            }
+
+            //set target
+            setPos();
+        }
     }
 
     //DON'T spawn new AI and kill
     public override void kill()
     {
-        //TODO - create unique kill animation
+        //start death
+        dying = true;
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        rb.velocity = Vector3.zero;
+        SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = defeat;
+
+        //coroutines
+        StopCoroutine(spawnBallCoroutine);
+        spawnBallCoroutine = null;
+        CancelInvoke();
+
+        //animation seize
+        this._animator.SetFloat("Horizontal", 0.0f);
+        this._animator.SetFloat("Vertical", 0.0f);
+        this._animator.SetFloat("Speed", 0.0f);
+
+        //die
+        Invoke("end", 2.0f);
+    }
+
+    //trigger recover
+    private void end()
+    {
         Destroy(gameObject);
     }
 
     //trigger recover
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        Invoke("reCover", 2.0f);
+        Invoke("reCover", 0.5f);
     }
 
     //find new cover
@@ -139,7 +174,7 @@ public sealed class AI_boss : AI
 
         if (collision.gameObject.CompareTag("ball_p"))
         {
-            DoDamage(25);
+            DoDamage(20);
             shake();
             this._animator.SetBool("Damaged", true);
             Invoke("undamage", 0.5f);

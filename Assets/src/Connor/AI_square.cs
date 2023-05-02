@@ -55,7 +55,7 @@ public class AI_square : AI
     //trigger recover
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        Invoke("reCover", 2.0f);
+        Invoke("reCover", 1.0f);
     }
 
     //find new cover
