@@ -27,7 +27,7 @@ public class ball : MonoBehaviour
 
         //Invoke("Tag", 0.05f);
 
-        Invoke("Disable", 1.0f);
+        Invoke("Disable", 2.0f);
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class ball : MonoBehaviour
     {
         if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("wall")) && (target != null))
         {
-            Disable();
+            Invoke("Disable", 0.01f);
         }
     }
 

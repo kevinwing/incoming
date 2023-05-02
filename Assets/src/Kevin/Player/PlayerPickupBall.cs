@@ -20,23 +20,15 @@ public class PlayerPickupBall : MonoBehaviour
     /// and Set the
     /// </summary>
     /// <param name="collision">The Instance of the collision</param>
-    private void OnCollisionEnter2d(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         // Debug.Log("Collision detected");
-        Debug.Log(collision.gameObject.tag);
         // check if the player has collided with the ball_ground
-        if (collision.gameObject.tag == "ball_ground")
+        if (collision.gameObject.CompareTag("ball_ground"))
         {
             Player.hasBall = true; // set the flag to true
             ball.enabled = true; // enable the ball game object
             Destroy(collision.gameObject); // destroy the ball ground object
-        }
-
-        if (collision.gameObject.tag == "ball")
-        {
-            Player.hasBall = true; // set the flag to true
-            ball.enabled = true; // enable the ball game object
-            Destroy(collision.gameObject); // destroy the ball object
         }
     }
 
