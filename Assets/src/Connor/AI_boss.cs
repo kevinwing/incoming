@@ -23,7 +23,6 @@ public sealed class AI_boss : AI
         get { return instance; }
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -85,7 +84,7 @@ public sealed class AI_boss : AI
     public override void kill()
     {
         //TODO - create unique kill animation
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     //trigger recover
@@ -97,27 +96,18 @@ public sealed class AI_boss : AI
     //find new cover
     public void reCover()
     {
-        //if has ball, get new cover, else, get new ball
-        if (hasBall)
+        //pick new cover not equal to current one
+        int temp = (int)Random.Range(0, all.Length);
+        while (temp == index)
         {
-            //pick new cover not equal to current one
-            int temp = (int)Random.Range(0, all.Length);
-            while (temp == index)
-            {
-                temp = (int)Random.Range(0, all.Length);
-            }
-
-            //assign index
-            index = temp;
-
-            //assign new cover
-            coverPoint = all[index];
+            temp = (int)Random.Range(0, all.Length);
         }
-        else
-        {
-            //run down nearest ball
-            chaseBall();
-        }
+
+        //assign index
+        index = temp;
+
+        //assign new cover
+        coverPoint = all[index];
     }
 
     //throw new ball
@@ -149,41 +139,24 @@ public sealed class AI_boss : AI
 
         if (collision.gameObject.CompareTag("ball_p"))
         {
-            //DoDamage(25);
+            DoDamage(25);
+            shake();
             this._animator.SetBool("Damaged", true);
+            Invoke("undamage", 0.5f);
         }
     }
 
-    //function for guiding the AI to a new ball to pick up
-    private void chaseBall()
+    //stop damage anim
+    private void undamage()
     {
-        //nullify coverPoint
-        coverPoint = null;
-
-        //get array of balls
-        GameObject[] balls = GameObject.FindGameObjectsWithTag("ball_ground");
-        GameObject closest = null;
-        float distance = 0.0f;
-
-        //find closest ball
-        for (int i = 0; i < balls.Length; i++)
-        {
-            if (Vector3.Distance(balls[i].transform.position, this.transform.position) > distance)
-            {
-                distance = Vector3.Distance(balls[i].transform.position, this.transform.position);
-                closest = balls[i];
-            }
-        }
-
-        //assign target
-        coverPoint = closest;
+        this._animator.SetBool("Damaged", false);
     }
 
     //initiate flip
     private void flip()
     {
         flipping = !flipping;
-        rb.velocity = new Vector2(Random.Range(-5.0f, 5.0f), Random.Range(-5.0f, 5.0f));
+        rb.velocity = new Vector2(Random.Range(Random.Range(-6.0f, -4.0f), Random.Range(4.0f, 6.0f)), Random.Range(Random.Range(-6.0f, -4.0f), Random.Range(4.0f, 6.0f)));
         Invoke("unflip", 1.0f);
     }
 
