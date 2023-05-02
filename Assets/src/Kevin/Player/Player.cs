@@ -49,6 +49,7 @@ is not known until runtime, such as with plugin architectures or when working wi
 /// </summary>
 public class Player : MonoBehaviour
 {
+    public static bool hasBall = false;
     [SerializeField] private float _speed;
     private int _health = 100;
     private bool is_dead = false;

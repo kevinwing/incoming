@@ -8,12 +8,34 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public List<Spawner> enemySpawners; // list of enemy spawners
-    public BossSpawner bossSpawner; // reference to the boss spawner
+    public List<BossSpawner> bossSpawners; // reference to the boss spawner
+
+    public GameObject selfObject; // reference to the self object
+
+    private EnemyPool enemyPool; // reference to the enemy pool
+
+    public GameObject enemyPrefab; // reference to the enemy prefab
+
+    private List<GameObject> activeEnemies; // list of active enemies
+    private List<GameObject> activeBosses; // list of active bosses
+    private List<GameObject> defeatedEnemies; // list of defeated enemies
     public int numWaves = 5; // number of waves in the level
     public int numEnemiesPerWave = 1; // number of enemies per wave
     public int numBossesPerWave = 1; // number of bosses per wave
     private int currentWave = 1; // current wave
     private bool isBossWave = false; // flag to check if the current wave is a boss wave
+    private bool isLevelEnded = false; // flag to check if the level has ended
+
+    public bool IsLevelEnded
+    {
+        get { return isLevelEnded; }
+    }
+
+    private void Awake()
+    {
+        this.enemyPool = selfObject.GetComponent<EnemyPool>();
+        this.activeEnemies = new List<GameObject>();
+    }
 
     /// <summary>
     /// Start is called before the first frame update. This is where we initialize the spawners and start the first wave of the game level
@@ -23,11 +45,13 @@ public class SpawnManager : MonoBehaviour
         // initialize the spawners and start the first wave of the game level
         foreach (Spawner spawner in enemySpawners)
         {
-            spawner.numEnemiesPerWave = numEnemiesPerWave;
-            spawner.StartNewGame();
+            // spawner.Init(ref this.enemyPool);
         }
-        bossSpawner.numEnemiesPerWave = 0; // set the number of enemies per wave for the boss spawner
-        bossSpawner.numBossesPerWave = numBossesPerWave;    // set the number of bosses per wave for the boss spawner
+
+        foreach (BossSpawner bossSpawner in bossSpawners)
+        {
+            // bossSpawner.Init(ref this.enemyPool);
+        }
     }
 
     /// <summary>
@@ -35,52 +59,66 @@ public class SpawnManager : MonoBehaviour
     /// </summary>
     private void Update()
     {
-        // check if the current wave is complete and start the next wave if it is complete and the level is not complete yet
-        if (currentWave <= numWaves)
+        // enemy wave
+        if (currentWave <= numWaves) // check if the current wave is complete
         {
-            // check if the current wave is a boss wave or not and start the next wave if the current wave is complete and the level is not complete yet
-            if (!isBossWave)
+            // check if there are active enemies
+            if (activeEnemies.Count == 0) // wave ended
             {
-                bool allWavesComplete = true; // flag to check if all the waves are complete
-
-                // loop through all the enemy spawners and check if all the waves are complete
+                // start next wave
                 foreach (Spawner spawner in enemySpawners)
                 {
-                    // check if the current wave is complete and set the flag to false if it is not complete and break out of the loop if the current wave is not complete and the level is not complete yet
-                    if (!spawner.IsWaveComplete())
-                    {
-                        allWavesComplete = false; // set the flag to false
-                        break;
-                    }
+                    // Add wave to active enemies for tracking
+                    activeEnemies.AddRange(spawner.SpawnWave(numEnemiesPerWave));
                 }
 
-                // start the next wave if all the waves are complete and the level is not complete yet and increment the current wave by 1 if all the waves are complete and the level is not complete yet
-                if (allWavesComplete)
+                currentWave++; // increment the current wave
+                // check if the current wave is the last wave
+                if (currentWave > numWaves)
                 {
-                    // start the next wave and increment the current wave by 1
-                    foreach (Spawner spawner in enemySpawners)
-                    {
-                        spawner.StartNewGame();
-                    }
-                    currentWave++;
+                    isBossWave = true;
                 }
             }
-            else // start the next wave if the current wave is complete and the level is not complete yet and increment the current wave by 1 if the current wave is complete and the level is not complete yet
+            else // wave not ended
             {
-                // start the next wave and increment the current wave by 1 if the current wave is complete and the level is not complete yet
-                if (bossSpawner.IsWaveComplete())
+                // check if there are defeated enemies and return them to the pool
+                foreach (GameObject enemy in activeEnemies)
                 {
-                    // start the next wave and increment the current wave by 1
-                    bossSpawner.StartNewGame();
-                    currentWave++;
+                    // check if the enemy is not active
+                    if (!enemy.activeSelf)
+                    {
+                        enemyPool.ReturnEnemyToPool(enemy); // return the enemy to the pool
+                        activeEnemies.Remove(enemy); // remove the enemy from the active enemies list
+                    }
                 }
             }
-            isBossWave = (currentWave % (numWaves + 1) == 0); // set the flag to true if the current wave is a boss wave and false if the current wave is not a boss wave
+
         }
-        else // print a message to the console if the level is complete
+        // boss wave
+        else
         {
-            Debug.Log("Level Complete!");
-            enabled = false; // disable the script
+            if (!isLevelEnded)
+            {
+                // check if boss wave has been triggered
+                if (isBossWave)
+                {
+                    if (activeBosses.Count == 0)
+                    {
+                        // reset boss wave flag
+                        isBossWave = false;
+                        // spawn boss wave
+                        foreach (BossSpawner bossSpawner in bossSpawners)
+                        {
+                            // Add wave to active bosses for tracking
+                            activeBosses.AddRange(bossSpawner.SpawnWave(numBossesPerWave));
+                        }
+                    }
+                }
+                else
+                {
+                    isLevelEnded = true;
+                }
+            }
         }
     }
 }

@@ -8,7 +8,12 @@ public class EnemyPool : MonoBehaviour
     private GameObject enemyPrefab; // reference of enemy prefab to clone
     private int poolSize = 10; // default size of pool;
 
-    public int numActiveEnemies;
+    // private int numActiveEnemies;
+
+    public int PoolSize {
+        get { return poolSize; }
+        set { Resize(value); }
+    }
 
     /// <summary>
     /// Constructor for EnemyPool class
@@ -20,17 +25,8 @@ public class EnemyPool : MonoBehaviour
         this.enemyQueue = new Queue<GameObject>(); // create instance of queue.
         this.enemyPrefab = enemyPrefab;
         this.poolSize = poolSize;
-    }
-
-    /// <summary>
-    /// Add intial enemies to pool
-    /// </summary>
-    void Awake()
-    {
-        // add intial enemies to pool
         AddEnemiesToPool(this.poolSize);
     }
-
 
     /// <summary>
     /// Takes in a vector3 for the postion and returns an active enemy at given
@@ -50,7 +46,7 @@ public class EnemyPool : MonoBehaviour
         // activate enemy
         enemy.SetActive(true); // activate enemy
 
-        numActiveEnemies++; // increment number of active enemies
+        // numActiveEnemies++; // increment number of active enemies
 
         // return enemy
         return enemy; // return enemy to caller
@@ -74,6 +70,8 @@ public class EnemyPool : MonoBehaviour
             // add enemy to pool
             this.enemyQueue.Enqueue(enemy);
         }
+
+        this.poolSize = this.enemyQueue.Count; // set pool size
     }
 
     /// <summary>
@@ -89,7 +87,7 @@ public class EnemyPool : MonoBehaviour
         this.enemyQueue.Enqueue(enemy);
 
         // decrement number of active enemies
-        numActiveEnemies--;
+        // numActiveEnemies--;
     }
 
     /// <summary>
@@ -107,7 +105,7 @@ public class EnemyPool : MonoBehaviour
     /// </summary>
     /// <param name="size">integer of new size</param>
     // set size of pool and shrink or grow pool accordingly
-    public void SetSize(int size)
+    private void Resize(int size)
     {
         // if size is greater than current pool size, add enemies to pool
         if (size > this.poolSize)
@@ -115,7 +113,7 @@ public class EnemyPool : MonoBehaviour
             AddEnemiesToPool(size - this.poolSize); // add enemies to pool
         }
         // if size is less than current pool size, delete enemies from pool
-        else if (size < this.poolSize)
+        else if (size < this.poolSize && size >= 0)
         {
             // delete enemies from pool as given by size parameter and current pool size difference
             for (int i = 0; i < this.poolSize - size; i++)
@@ -123,16 +121,6 @@ public class EnemyPool : MonoBehaviour
                 DeleteEnemyFromPool(this.enemyQueue.Dequeue()); // delete enemy from pool
             }
         }
-        this.poolSize = size; // set pool size
-    }
-
-    /// <summary>
-    /// Return current pool size
-    /// </summary>
-    /// <returns>integer of current pool size</returns>
-    public int GetSize()
-    {
-        return this.poolSize; // return pool size
     }
 
     /// <summary>
@@ -140,11 +128,7 @@ public class EnemyPool : MonoBehaviour
     /// </summary>
     public void Clear()
     {
-        // delete all enemies from pool
-        for (int i = 0; i < this.poolSize; i++)
-        {
-            DeleteEnemyFromPool(this.enemyQueue.Dequeue()); // delete enemy from pool
-        }
+        this.enemyQueue.Clear(); // clear queue
     }
 
     /// <summary>
@@ -154,14 +138,5 @@ public class EnemyPool : MonoBehaviour
     public bool IsEmpty()
     {
         return this.enemyQueue.Count == 0; // return true if pool is empty and false otherwise
-    }
-
-    /// <summary>
-    /// Get number of active enemies in pool
-    /// </summary>
-    /// <returns></returns>
-    public int GetNumActiveEnemies()
-    {
-        return numActiveEnemies; // return number of active enemies
     }
 }
