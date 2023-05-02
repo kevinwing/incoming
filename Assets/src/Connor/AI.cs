@@ -18,9 +18,6 @@ public class AI : MonoBehaviour
     protected GameObject[] all = {};
     protected int index = 0;
 
-    //public self ref
-    public GameObject AI_inst;
-
     //movement
     protected Vector2 AIMovement;
 
