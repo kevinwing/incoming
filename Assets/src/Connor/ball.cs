@@ -27,7 +27,7 @@ public class ball : MonoBehaviour
 
         //Invoke("Tag", 0.05f);
 
-        Invoke("Disable", 2.0f);
+        Invoke("Disable", 1.5f);
     }
 
     // Update is called once per frame
