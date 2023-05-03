@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6297524060864793533}
   - component: {fileID: 3326528882672349851}
   - component: {fileID: -1072620861111595186}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ece7035da959340edaab7dfa802bbb15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phealth: {fileID: 0}
   healthBoost: 10
 --- !u!58 &-1072620861111595186
 CircleCollider2D:

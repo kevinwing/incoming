@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MenuButtons : MonoBehaviour
@@ -10,7 +11,13 @@ public class MenuButtons : MonoBehaviour
     public GameObject settingsMenuUI;
     public GameObject returnButton;
     public GameManager GameManager;
+    public Toggle bcToggle;
+    public bool bcMode;
 
+
+    public void Start(){
+        bcToggle.isOn = false;
+    }
 
     public void PlayGame(){
         GameManager.SetGameState(GameState.Wave);
@@ -38,6 +45,23 @@ public class MenuButtons : MonoBehaviour
         mainMenuUI.SetActive(true);
         mainMenuUI.SetActive(true);
         settingsMenuUI.SetActive(false);
+
+    }
+
+    public void BCMode(bool tickOn){
+        if(tickOn){
+            bcMode = true;
+            Debug.Log("BC mode true");
+
+        }
+        else{
+            bcMode = false;
+            Debug.Log("BC mode false");
+
+        }
+        GameManager.SetBC(bcMode);
+        
+
 
     }
 

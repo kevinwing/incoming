@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour
     string sceneName;
     public GameState State;
     public int numberEnemies = 5;
-    //public static bool isPaused;
+    public static bool BCMode;
     public pauseMenu pausemenu;
+    //public MenuButtons menuButtons;
 
     void Awake(){
         //make singleton -- Make sure this persists through scenes and that there are not multiple instances.
@@ -70,8 +71,20 @@ public class GameManager : MonoBehaviour
             SetGameState(GameState.Wave);
         }
 
+
+
+        BCMode = false;
         //pausemenu = FindObjectOfType<pauseMenu>();
         
+    }
+    
+    public void SetBC(bool mode){
+
+        if(mode){
+            BCMode = true;
+        }
+
+
     }
 
 
@@ -109,6 +122,11 @@ public class GameManager : MonoBehaviour
             case GameState.Victory:
                 break;
             case GameState.Death:
+
+                if(BCMode == true){
+                    break;
+                }
+                
                 // Trigger new scene
                 Time.timeScale = .1f;
                 Invoke("Death", .1f);

@@ -19,4 +19,8 @@ public class DeathMenu : MonoBehaviour
     public void Restart(){
         GameManager.SetGameState(GameState.Wave);
     }
+    public void MainMenu(){
+        GameManager.SetGameState(GameState.Menu);
+
+    }
 }
