@@ -103,7 +103,7 @@ public class PlayerHealth : MonoBehaviour
     // On collision with ball TakeDamage
     private void OnCollisionEnter2D(Collision2D collision){
         if(collision.gameObject.CompareTag("ball")){
-            DoDamage(110);
+            DoDamage(50);
             Debug.Log("Ball Collision");
             
         //}
