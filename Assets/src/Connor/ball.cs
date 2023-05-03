@@ -25,8 +25,6 @@ public class ball : MonoBehaviour
         //release
         release();
 
-        //Invoke("Tag", 0.05f);
-
         Invoke("Disable", 1.5f);
     }
 
@@ -74,11 +72,6 @@ public class ball : MonoBehaviour
     private void Disable()
     {
         gameObject.tag = "ball_ground";
-    }
-
-    //retag ball
-    private void Tag()
-    {
-        gameObject.tag = "ball";
+        gameObject.layer = LayerMask.NameToLayer("TransparentFX");
     }
 }
