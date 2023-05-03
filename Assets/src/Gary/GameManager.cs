@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     string sceneName;
     public GameState State;
     public int numberEnemies = 5;
-    public static bool isPaused;
+    //public static bool isPaused;
     public pauseMenu pausemenu;
 
     void Awake(){
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        isPaused = false;
+        //isPaused = false;
         
 
     
@@ -82,7 +82,15 @@ public class GameManager : MonoBehaviour
 
         switch(newState) {
             case GameState.Menu:
+                FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
+
                 FindObjectOfType<AudioManager>().Play("Title");
+                m_scene = SceneManager.GetActiveScene();
+                sceneName = m_scene.name;
+                if( sceneName != "Main Menu"){
+                    SceneManager.LoadScene("Main Menu");
+                }
+
                 break;
             case GameState.Paused:
                 Pause();
@@ -118,22 +126,22 @@ public class GameManager : MonoBehaviour
 
     private void Pause(){
 
-        if( isPaused == false){
+        //if( isPaused == false){
             FindObjectOfType<AudioManager>().SetLowPassDirect(120);
-            pausemenu.Pause();
+            //pausemenu.Pause();
             
             Time.timeScale = 0f;
-            Debug.Log("GameManager gamestate pause");
-            isPaused = true;
-        }
-        else{
-            pausemenu.UnPause();
+            //Debug.Log("GameManager gamestate pause");
+            //isPaused = true;
+        //}
+       //else{
+            //pausemenu.UnPause();
 
-            Time.timeScale = 1;
-            FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
-            isPaused = false;
+            //Time.timeScale = 1;
+            //FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
+            //isPaused = false;
 
-        }
+        //}
                         
                 // NEED TO CALL METHOD TO DISABLE PLAYER ?
     
@@ -149,6 +157,7 @@ public class GameManager : MonoBehaviour
     } 
 
     private void Wave(){
+        Time.timeScale = 1f;
         FindObjectOfType<AudioManager>().SetLowPassDirect(22000);
         Debug.Log("GameManager gamestate wave");
 
@@ -181,14 +190,14 @@ public class GameManager : MonoBehaviour
     }
 
     */
-
-     void Update()
+    /*
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)){
+        if (Input.GetKeyDown(KeyCode.P) && isPaused == false){
             Debug.Log("Pause Button Pressed");
             SetGameState(GameState.Paused);
         }
-    }
+    }*/
 }
 
 

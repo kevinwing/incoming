@@ -21,7 +21,9 @@ public class pauseMenu : MonoBehaviour
     public void UnPause(){
         pauseMenuUI.SetActive(false);
         pauseButton.SetActive(true);
-        
+        Debug.Log("pauseMenu UnPause()");
+        GameManager.SetGameState(GameState.Wave);
+
     }
     public void Quit(){
         Application.Quit();
@@ -32,6 +34,13 @@ public class pauseMenu : MonoBehaviour
         //pauseMenuUI.SetActive(false);
         healthBar.SetActive(false);
     }   
+    public void MainMenu(){
+        pauseMenuUI.SetActive(false);
+        pauseButton.SetActive(true);
+        Debug.Log("pauseMenu MainMenu()");
+        GameManager.SetGameState(GameState.Menu);
+
+    }
 
 
     public void Return(){
@@ -39,4 +48,5 @@ public class pauseMenu : MonoBehaviour
         //pauseMenuUI.SetActive(true);
         //healthBar.SetActive(true);
     }
+
 }

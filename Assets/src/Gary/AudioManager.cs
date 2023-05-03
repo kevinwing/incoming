@@ -80,6 +80,11 @@ public class AudioManager : MonoBehaviour
         if( name == "Death"){
             Stop("Action");
         }
+        if( name == "Title"){
+            Stop("Action");
+            Stop("Death");
+            Stop("Birds");
+        }
 
     } 
 
