@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1403297092258802983}
   - component: {fileID: 8778128675276608047}
   - component: {fileID: 4040934002430365406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MegaBoost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
