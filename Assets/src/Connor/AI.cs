@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     /* ---VARIABLES--- */
+    //grab ball
+    // protected bool hasBall = true;
 
     //camera
     public GameObject camera;
@@ -117,7 +119,8 @@ public class AI : MonoBehaviour
     public virtual void kill()
     {
         // Destroy(gameObject);
-        this.gameObject.SetActive(false);
+        hasBall = true;
+        gameObject.SetActive(false);
     }
 
     public AI_data GetAIData()
@@ -147,5 +150,11 @@ public class AI : MonoBehaviour
             Health = health;
             aiInstance = ai;
         }
+
+    }
+    //give ball
+    public void giveBall()
+    {
+        this.hasBall = true;
     }
 }

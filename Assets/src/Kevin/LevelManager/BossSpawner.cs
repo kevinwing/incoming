@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BossSpawner : Spawner
 {
-    // [SerializeField] private GameObject bossPrefab;
+    [SerializeField] private GameObject bossPrefab;
     [SerializeField] private int bossSpawnWave;
 
     private int currentWave;
@@ -31,7 +31,7 @@ public class BossSpawner : Spawner
 
     private void SpawnBoss()
     {
-        GameObject boss = Instantiate(this.enemyPrefab, this.transform.position, this.transform.rotation);
+        GameObject boss = Instantiate(this.bossPrefab, this.transform.position, this.transform.rotation);
         spawnedEnemies.Add(boss);
     }
 }

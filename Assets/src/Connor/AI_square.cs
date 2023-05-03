@@ -50,6 +50,11 @@ public class AI_square : AI
         this._animator.SetFloat("Horizontal", this.AIMovement.x);
         this._animator.SetFloat("Vertical", this.AIMovement.y);
         this._animator.SetFloat("Speed", this.AIMovement.sqrMagnitude);
+
+        // if (this.gameObject.activeSelf == false)
+        // {
+        //     this.hasBall = true;
+        // }
     }
 
     //trigger recover
@@ -118,7 +123,7 @@ public class AI_square : AI
     //2d collider handler
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
         if (collision.gameObject.CompareTag("ball_ground"))
         {
             hasBall = true;
@@ -157,9 +162,9 @@ public class AI_square : AI
         coverPoint = closest;
     }
 
-    //give ball
-    public void giveBall()
-    {
-        hasBall = true;
-    }
+    // //give ball
+    // public void giveBall()
+    // {
+    //     hasBall = true;
+    // }
 }
