@@ -37,6 +37,9 @@ public class ball : MonoBehaviour
     // }
 
     //function to release the ball
+
+ 
+
     private void release()
     {
         //total velocity
