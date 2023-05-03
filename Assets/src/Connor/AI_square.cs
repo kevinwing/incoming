@@ -162,9 +162,10 @@ public class AI_square : AI
         coverPoint = closest;
     }
 
-    // //give ball
-    // public void giveBall()
-    // {
-    //     hasBall = true;
-    // }
+    //on enable for hasball
+    void OnEnable()
+    {
+        hasBall = true;
+        Start();
+    }
 }

@@ -152,9 +152,4 @@ public class AI : MonoBehaviour
         }
 
     }
-    //give ball
-    public void giveBall()
-    {
-        this.hasBall = true;
-    }
 }
