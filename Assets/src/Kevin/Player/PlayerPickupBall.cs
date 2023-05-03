@@ -24,7 +24,7 @@ public class PlayerPickupBall : MonoBehaviour
     {
         // Debug.Log("Collision detected");
         // check if the player has collided with the ball_ground
-        if (collision.gameObject.CompareTag("ball_ground"))
+        if (collision.gameObject.CompareTag("ball_ground") && !Player.hasBall)
         {
             Player.hasBall = true; // set the flag to true
             ball.enabled = true; // enable the ball game object

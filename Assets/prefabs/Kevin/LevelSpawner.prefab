@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6517870832015005147}
   - component: {fileID: 8747305673841883328}
+  - component: {fileID: 158700944416154909}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner3
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517870832015005148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.18, y: 3.72, z: 0}
+  m_LocalPosition: {x: -3.79, y: 0.43, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,9 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPool: {fileID: 0}
+  waveSize: 0
+  enemyPrefab: {fileID: 0}
+--- !u!114 &158700944416154909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870832015005148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bb00a7178396a4a9733c7b734d69da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
-  numEnemiesPerWave: 10
-  spawnDelay: 1
 --- !u!1 &6517870832358406087
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,11 +111,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2d71cf233011364489e4780ce00da41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawners: []
-  bossSpawner: {fileID: 0}
-  numWaves: 5
-  numEnemiesPerWave: 1
-  numBossesPerWave: 1
+  spawners:
+  - {fileID: 1476879851755971341}
+  - {fileID: 582812938504137939}
+  - {fileID: 8747305673841883328}
+  - {fileID: 8879556731678425741}
+  bossSpawner: {fileID: 7946316805424317624}
+  numberOfWaves: 3
+  waveSize: 1
+  bossWaveSize: 1
 --- !u!1 &6517870832720459011
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,8 +130,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6517870832720459010}
   - component: {fileID: 8879556731678425741}
+  - component: {fileID: 6628199989848949336}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner4
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +146,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517870832720459011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.14, y: -2.71, z: 0}
+  m_LocalPosition: {x: -0.11, y: -5.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -146,9 +165,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
-  numEnemiesPerWave: 10
-  spawnDelay: 1
+  enemyPool: {fileID: 0}
+  waveSize: 0
+  enemyPrefab: {fileID: 0}
+--- !u!114 &6628199989848949336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870832720459011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bb00a7178396a4a9733c7b734d69da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 0}
 --- !u!1 &6517870832900220392
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517870832900220392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.36, y: 18.55, z: 0}
+  m_LocalPosition: {x: -0.1, y: 14.79, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -193,12 +225,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: facfe5070b7ac88489d800b45c81aab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 0}
-  numEnemiesPerWave: 10
-  spawnDelay: 1
-  bossPrefab: {fileID: 0}
-  numBossesPerWave: 1
-  bossSpawnDelay: 3
+  enemyPool: {fileID: 0}
+  waveSize: 0
+  enemyPrefab: {fileID: 6547798847543896583, guid: b205a9f0a2f061d4fa9eeba8046ccea3, type: 3}
+  bossSpawnWave: 0
 --- !u!1 &6517870833224505768
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,8 +270,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6517870833729789348}
   - component: {fileID: 582812938504137939}
+  - component: {fileID: 2453274364841117740}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner2
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517870833729789349}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.05, y: -3.46, z: 0}
+  m_LocalPosition: {x: -0.16, y: 3.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -274,9 +305,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPool: {fileID: 0}
+  waveSize: 0
+  enemyPrefab: {fileID: 0}
+--- !u!114 &2453274364841117740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870833729789349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bb00a7178396a4a9733c7b734d69da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
-  numEnemiesPerWave: 10
-  spawnDelay: 1
 --- !u!1 &6517870833810101538
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,8 +331,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6517870833810101537}
   - component: {fileID: 1476879851755971341}
+  - component: {fileID: 8699531132657511817}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner1
   m_TagString: spawn_point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -302,7 +347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6517870833810101538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.93, y: 3.61, z: 0}
+  m_LocalPosition: {x: 3.35, y: 0.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -321,6 +366,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1446d8b8310b944d91d16ce174dc86a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPool: {fileID: 0}
+  waveSize: 0
+  enemyPrefab: {fileID: 0}
+--- !u!114 &8699531132657511817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6517870833810101538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60bb00a7178396a4a9733c7b734d69da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 6547798847543896583, guid: 40d14679353c730499537ce831a54c3c, type: 3}
-  numEnemiesPerWave: 10
-  spawnDelay: 1

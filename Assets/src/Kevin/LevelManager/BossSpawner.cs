@@ -1,41 +1,37 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Boss spawner that spawns a boss at the end of each level
-/// </summary>
 public class BossSpawner : Spawner
 {
-    public GameObject bossPrefab; // reference to the boss prefab
-    private int numBossesPerWave; // number of bosses per wave
-    // public float bossSpawnDelay = 3f; // delay between each boss spawn
+    // [SerializeField] private GameObject bossPrefab;
+    [SerializeField] private int bossSpawnWave;
 
-    private int numBossesSpawned = 0; // number of bosses spawned
+    private int currentWave;
 
-    /// <summary>
-    /// Start a new level by spawning a boss if the number of bosses spawned is less than the number of bosses per wave
-    /// </summary>
-    public override void StartNewLevel(int waveSize = 1)
+    protected override void Start()
     {
-        numBossesPerWave = waveSize;
-        numBossesSpawned = 0; // reset the number of bosses spawned
+        base.Start();
+        currentWave = 0;
     }
 
-    public override GameObject SpawnEnemy()
+    // public void SetBossPrefab(ref GameObject bossPrefab)
+    // {
+    //     this.bossPrefab = bossPrefab;
+    // }
+
+    public override void TriggerWave()
     {
-        GameObject boss = Instantiate(this.bossPrefab, this.transform.position, Quaternion.identity); // instantiate a boss at the spawner's position
-        this.numBossesSpawned++; // increment the number of bosses spawned
-        return boss;
+        currentWave++;
+        base.TriggerWave();
+        if (currentWave == bossSpawnWave)
+        {
+            SpawnBoss();
+        }
     }
 
-    /// <summary>
-    /// Check if the current wave is complete or not by checking if the number of bosses spawned is equal to the number of bosses per wave and if the base wave is complete or not and return the result of the check as a bool value
-    /// </summary>
-    /// <returns>bool</returns>
-    public override bool IsWaveSpawnComplete()
+    private void SpawnBoss()
     {
-        // check if the number of bosses spawned is equal to the number of bosses per wave and if the base wave is complete or not and return the result of the check as a bool value
-        return numBossesSpawned >= numBossesPerWave;
+        GameObject boss = Instantiate(this.enemyPrefab, this.transform.position, this.transform.rotation);
+        spawnedEnemies.Add(boss);
     }
 }

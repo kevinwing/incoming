@@ -116,7 +116,8 @@ public class AI : MonoBehaviour
     //spawn new AI and kill
     public virtual void kill()
     {
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        this.gameObject.SetActive(false);
     }
 
     public AI_data GetAIData()
