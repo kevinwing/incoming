@@ -21,12 +21,7 @@ public class BossSpawner : Spawner
 
     public override void TriggerWave()
     {
-        currentWave++;
-        base.TriggerWave();
-        if (currentWave == bossSpawnWave)
-        {
-            SpawnBoss();
-        }
+        SpawnBoss();
     }
 
     private void SpawnBoss()
