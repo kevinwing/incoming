@@ -27,7 +27,6 @@ using UnityEngine.SceneManagement;
 
 
 
-
 public class GameManager : MonoBehaviour
 {
     //public GameObject deathTestManager;
@@ -41,6 +40,7 @@ public class GameManager : MonoBehaviour
     public int numberEnemies = 5;
     public static bool BCMode;
     public pauseMenu pausemenu;
+    //public AI_boss boss;
     //public MenuButtons menuButtons;
 
     void Awake(){
@@ -71,7 +71,12 @@ public class GameManager : MonoBehaviour
             SetGameState(GameState.Wave);
         }
 
-
+        /*
+        boss = FindObjectOfType<AI_boss>();
+        if(boss != null){
+            boss.Spawned += OnBossSpawned;
+            boss.Destroyed += OnBossDestroyed;
+        }*/
 
         BCMode = false;
         //pausemenu = FindObjectOfType<pauseMenu>();
@@ -83,6 +88,18 @@ public class GameManager : MonoBehaviour
         if(mode){
             BCMode = true;
         }
+
+
+    }
+    public void OnBossSpawned(){
+
+        SetGameState(GameState.Boss);
+
+
+    }
+    public void OnBossDestroyed(){
+
+        SetGameState(GameState.Victory);
 
 
     }
@@ -117,9 +134,11 @@ public class GameManager : MonoBehaviour
                 // Will Be used inbetween waves or levels
                 break;
             case GameState.Boss:
-
+                Boss();
                 break;
             case GameState.Victory:
+                Time.timeScale = .1f;
+                Invoke("Victory", .1f);
                 break;
             case GameState.Death:
 
@@ -173,6 +192,25 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Birds");
     
     } 
+
+    private void Victory(){
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Victory");
+        Debug.Log("Victory Game State");
+        SceneManager.LoadScene("Victory");
+        FindObjectOfType<AudioManager>().Play("Death");
+        //FindObjectOfType<AudioManager>().Play("Fall");
+        FindObjectOfType<AudioManager>().Play("Birds");
+    
+    }
+
+    private void Boss(){
+        Time.timeScale = 1f;
+        Debug.Log("Boss Game State");
+        FindObjectOfType<AudioManager>().Play("Boss");
+
+    
+    }    
 
     private void Wave(){
         Time.timeScale = 1f;

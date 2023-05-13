@@ -12,6 +12,16 @@ public class PauseManager : MonoBehaviour
     void Start()
     {
         isPaused = false;
+
+    }
+
+    void SetBoss(){
+        GameManager.SetGameState(GameState.Boss);
+
+    }
+    void SetVictory(){
+        GameManager.SetGameState(GameState.Victory);
+
     }
 
     void Update()

@@ -375,6 +375,12 @@ MonoBehaviour:
     audioMixerGroup: {fileID: 24300002, guid: 01daa40b4412942f3887c2942a22f5ab, type: 2}
     loop: 1
     source: {fileID: 0}
+  - name: Boss
+    clip: {fileID: 8300000, guid: fd6eed886be1c4ea792f94c340a910d0, type: 3}
+    volume: 0.899
+    audioMixerGroup: {fileID: 24300002, guid: 01daa40b4412942f3887c2942a22f5ab, type: 2}
+    loop: 1
+    source: {fileID: 0}
   masterMixer: {fileID: 24100000, guid: 01daa40b4412942f3887c2942a22f5ab, type: 2}
   musicSource: {fileID: 391775571223420472}
   effectSource: {fileID: 391775569889981159}

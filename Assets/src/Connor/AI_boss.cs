@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -23,9 +24,14 @@ public sealed class AI_boss : AI
     //defeat sprite
     public Sprite defeat;
 
+
     static AI_boss() {}
 
     private AI_boss() {} // call the base constructor with a value for health
+
+    public event Action<GameObject> Spawned;
+    public event Action<GameObject> Destroyed;
+
 
     public static AI_boss Instance
     {
@@ -35,6 +41,9 @@ public sealed class AI_boss : AI
     // Start is called before the first frame update
     void Start()
     {
+        GameObject reciever = GameObject.Find("PauseManager");
+        reciever.SendMessage("SetBoss");
+        Spawned?.Invoke(gameObject); //----Gary for delete purposes
         player = GameObject.FindWithTag("Player");
         InvokeRepeating("flip", 2.0f, 5.0f);
         //anim = gameObject.GetComponent<Animation>();
@@ -112,8 +121,13 @@ public sealed class AI_boss : AI
         this._animator.SetFloat("Vertical", 0.0f);
         this._animator.SetFloat("Speed", 0.0f);
 
+
+        Destroyed?.Invoke(gameObject); //----Gary for delete purposes
+        gameObject.SendMessage("SetVictory");
+
         //die
         Invoke("end", 2.0f);
+        
     }
 
     //trigger recover
@@ -132,10 +146,10 @@ public sealed class AI_boss : AI
     public void reCover()
     {
         //pick new cover not equal to current one
-        int temp = (int)Random.Range(0, all.Length);
+        int temp = (int)UnityEngine.Random.Range(0, all.Length);
         while (temp == index)
         {
-            temp = (int)Random.Range(0, all.Length);
+            temp = (int)UnityEngine.Random.Range(0, all.Length);
         }
 
         //assign index
@@ -191,7 +205,7 @@ public sealed class AI_boss : AI
     private void flip()
     {
         flipping = !flipping;
-        rb.velocity = new Vector2(Random.Range(Random.Range(-6.0f, -4.0f), Random.Range(4.0f, 6.0f)), Random.Range(Random.Range(-6.0f, -4.0f), Random.Range(4.0f, 6.0f)));
+        rb.velocity = new Vector2(UnityEngine.Random.Range(UnityEngine.Random.Range(-6.0f, -4.0f), UnityEngine.Random.Range(4.0f, 6.0f)), UnityEngine.Random.Range(UnityEngine.Random.Range(-6.0f, -4.0f), UnityEngine.Random.Range(4.0f, 6.0f)));
         Invoke("unflip", 1.0f);
     }
 

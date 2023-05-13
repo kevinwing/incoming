@@ -16,6 +16,7 @@ TagManager:
   - boss_spawn_point
   - player_spawn
   - pausemenu
+  - GameManager
   layers:
   - Default
   - TransparentFX
